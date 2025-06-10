@@ -1,0 +1,113 @@
+ *{
+    font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+ }
+ .center, .right{
+    background-color: rgba(217, 217, 217, 1) ;
+    justify-content: space-between;
+    margin-top: 50px;
+    margin-left: 25px;
+    margin-right: 25px;
+    border-radius: 20px;
+    padding-left: 50px;
+    padding-right: 50px;
+    
+}
+
+.left{
+    margin-right: auto;
+    height: 80%;
+    background-color: rgba(217, 217, 217, 1) ;
+    justify-content: space-between;
+    border-radius: 10px;
+    margin-top: 50px;
+    margin-left: 15px;
+    width: 200px;
+    padding-left: 10px;
+}
+
+.center{
+    width: 850px;
+    padding-left: 5%;
+    padding-bottom: 50px;
+}
+
+.right{
+    margin-left: auto;
+    text-align: left;
+    padding-left: 25px;
+    min-width:200px;
+    height: 80%;
+}
+
+.body{
+    display: flex;
+}
+
+details {
+    margin: 20px 0;
+    border: 1px ;
+    border-radius: 10px;
+    padding: 20px;
+    cursor: pointer;
+    width: 125px;
+}
+
+summary {
+    font-weight: bold;
+    cursor: pointer;
+    
+}
+
+summary {
+    list-style: none; 
+}
+
+details[open] {
+    background-color: #f9f9f9;
+}
+
+a{
+    color: black;
+    text-decoration: none;
+}
+
+a:hover{
+    color: #14939e;
+}
+
+ul{
+    text-align: left;
+    padding-left: 10px;
+}
+
+li{
+    border: 1px solid #ccc;  /* Cor cinza clara */
+    border-radius: 4px;
+}
+
+li:hover {
+    border: 1px solid #6a249f; 
+    background-color: #e8f5e9;  
+    transition: all 0.3s ease; /* Animação suave */
+}
+
+.materia-imagem img {
+  max-width: 100%;
+  height: auto;
+  float: center;
+  border-radius: 8px;
+  margin: 20px 0;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+.subtopico-imagem {
+  display: flex;
+  justify-self: center;
+  align-items: center;
+  
+}
+.subtopico-imagem img{
+    height: 300px;
+    width: 350px;
+    
+}

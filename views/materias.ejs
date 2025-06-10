@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>SimpMath</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <link rel='stylesheet' type='text/css' media='screen' href='/css/cabeca.css'>
+    <link rel="stylesheet" href="/css/materias.css">
+    <link rel="icon" href="/img/LogoTipo.png" type="image/png">
+    
+</head>
+<body>
+    <header class="navbar">
+        
+            <img src="/img/logo.png" class="navbar-brand"> 
+            <div>  
+                <button class="navbar-button"><a href="/sobre">Sobre</a></button>
+                <button class="navbar-button"><a href="/">Home</a></button>
+            </div>
+    </header>
+    <div class="body">
+    
+        <div class="left">
+            <details>
+                <summary>6° ano</summary>
+                <ul>
+                    <% materias.forEach((materia, index) => { %>
+                        <li>
+                            <!-- Link para carregar cada matéria -->
+                            <a href="/materias/6/<%= index %>"><%= materia.nome %></a>
+                        </li>
+                    <% }) %>
+                </ul>
+            </details>
+            
+            <details>
+                <summary>7° ano</summary>
+                <ul>
+                    <li><a href="">Números racionais</a></li>
+                    <li><a href="">Expressões algébricas</a></li>
+                    <li><a href="">Geometria plana</a></li>
+                    <li><a href="">Razão</a></li>
+                </ul>
+            </details>
+
+            <details>
+                <summary>8° ano</summary>
+                <ul>
+                    <li><a href="">Números inteiros e racionais</a></li>
+                    <li><a href="">Equações do 1º grau</a></li>
+                    <li><a href="">Geometria espacial</a></li>
+                    <li><a href="">Funções</a></li>
+                </ul>
+            </details>
+
+            <details>
+                <summary>9° ano</summary>
+                <ul>
+                    <li><a href="">Trigonometria básica</a></li>
+                    <li><a href="">Equação de 2° grau</a></li>
+                    <li><a href="">Geometria analítica</a></li>
+                    <li><a href="">Probabilidade</a></li>
+                </ul>
+            </details>
+
+        </div>
+        
+        <div class="center">
+            <% if (materiaAtual) { %>
+                <!-- Modo: exibe UMA matéria (quando clicada no sumário) -->
+                <div class="materia-container" id="materia-<%= materiaAtual.nome.replace(/\s+/g, '-').toLowerCase() %>">
+                    <h1><%= materiaAtual.nome %></h1>
+                    
+                    <div class="introducao">
+                        <% materiaAtual.introducao.forEach(paragrafo => { %>
+                            <p><%= paragrafo %></p>
+                        <% }) %>
+                    </div>
+
+                    <% materiaAtual.subtopicos.forEach((subtopico, index) => { %>
+                        <div class="subtopico" id="subtopico-<%= index %>">
+                            <h2><%= subtopico.titulo %></h2>
+
+                            <div class="conteudo">
+
+                                <% subtopico.conteudo.forEach(item => { %>
+                                    <% if(item.includes('=')) { %>
+                                        <p><span class="operacao-matematica"><%= item %></span></p>
+
+                                    <% } else { %>                                       
+                                        <p><%= item %></p>
+                                        
+                                    <% } %>
+                                       
+                                <% }) %>
+                                 <% if (subtopico.imagem) { %>
+                                        <div class="subtopico-imagem">
+                                            <img src="<%= subtopico.imagem %>" 
+                                                alt="Exemplo: <%= subtopico.titulo %>" class="">
+                                        </div>
+
+                                        <% } %>
+
+                            </div>
+
+                            <% if(subtopico.numerais_romanos) { %>
+                                <div class="tabela-numerais">
+                                    <h3>Valores Básicos:</h3>
+                                    <table>
+                                        <% Object.entries(subtopico.numerais_romanos.basicos).forEach(([numeral, valor]) => { %>
+                                            <tr>
+                                                <td><strong><%= numeral %></strong></td>
+                                                <td>= <%= valor %></td>
+                                            </tr>
+                                        <% }) %>
+                                    </table>
+                                </div>
+                            <% } %>
+                        </div>
+                    <% }) %>
+                </div>
+            <% } else { %>
+                <!-- Modo: exibe TODAS matérias (página inicial) -->
+                <% materias.forEach(materia => { %>
+                    <div class="materia-container" id="materia-<%= materia.nome.replace(/\s+/g, '-').toLowerCase() %>">
+                        <h1><%= materia.nome %></h1>
+                        
+                        <div class="introducao">
+                            <% materia.introducao.forEach(paragrafo => { %>
+                                <p><%= paragrafo %></p>
+                            <% }) %>
+                        </div>
+
+                        <% materia.subtopicos.forEach((subtopico, index) => { %>
+                            <div class="subtopico">
+                                <h2><%= subtopico.titulo %></h2>
+                            
+                            </div>
+                        <% }) %>
+                    </div>
+                <% }) %>
+            <% } %>
+        </div>
+
+       <!-- Sumário modificado -->
+        <div class="right">
+    <h3>Sumário da Matéria</h3>
+    <ul class="sumario">
+        <% if (materiaAtual) { %>
+            <li class="materia-sumario">
+                <strong><%= materiaAtual.nome %></strong>
+                <ul>
+                    <% materiaAtual.subtopicos.forEach((subtopico, index) => { %>
+                        <% if (subtopico.titulo && String(subtopico.titulo).trim() !== '') { %>
+                            <li class="sumario-item" 
+                                onclick="scrollToSubtopico('<%= materiaAtual.nome.replace(/\s+/g, '-').toLowerCase() %>', '<%= index %>')">
+                                <%= subtopico.titulo %>
+                            </li>
+                        <% } %>
+                    <% }) %>
+                </ul>
+                    </li>
+                <% } else { %>
+                    <!-- Modo: Mostra todas as matérias (como antes) -->
+                    <% materias.forEach((materia, index) => { %>
+                        <li class="materia-sumario">
+                            <strong>
+                                <a href="/materias/<%= index %>"><%= materia.nome %></a>
+                            </strong>
+                        </li>
+                    <% }) %>
+                <% } %>
+            </ul>
+        </div>
+    </div>
+</body>
+</html>

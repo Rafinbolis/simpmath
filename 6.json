@@ -1,0 +1,206 @@
+{
+  "materias": [
+    {
+      "nome": "Sistemas de Numeração Decimal",
+      "introducao": [
+        "A Matemática nem sempre teve a forma que vemos hoje, ela foi fruto do passar do tempo, e bota tempo nisso. O uso da matemática pelas pessoas comum pode ter começado pela necessidade de fazer o gerenciamento das plantações, animais e  itens de suas posses. ",
+        "Para chegarmos no resultado que vemos hoje em dia tivemos vários grupos e povos que  contribuíram para a formação dos nossos números e numerais."
+      ],
+      "subtopicos": [
+        {
+          "titulo": "Numerais",
+          "conteudo": [
+            "Os numerais são as formas de representar um numero, ela pode ser gráfica, oral, símbolo ou um sinal.",
+            "Com a criação de um sistema para contar animais, plantas e outros objeto, veio a necessidade de agrupar esses números assim podendo contar mais objetos de uma forma mais eficiente, podemos ver isso nos números romandos por exemplo :"
+          ],
+          "numerais_romanos": {
+            "basicos": {
+              "I": 1,
+              "V": 5,
+              "X": 10,
+              "L": 50,
+              "C": 100,
+              "D": 500,
+              "M": 1000
+            }
+            
+          }
+        
+        },
+        {
+          "titulo":"",
+          "conteudo":[
+              "As quantidades de 1 a 9 têm símbolos diferentes para representá-las.", "O sistema é decimal ou seja agrupamos de 10 em 10", "O numero zero representa a ausência de unidades, dezenas centenas assim por diante.",
+              "O valor de cada algarismo vai variar de acordo de suas posições na escrita do numero, unidade, dezena, centena, unidade de milhar, dezena de milhar, centena de milhar e assim por diante milhão, bilhão, trilhão...",
+              "Sem um símbolo para indicar a ausência de agrupamentos em determinada posição, fica difícil diferenciar registros feitos com os mesmos algarismos, como: 23, 203, 2003, 230 etc."
+            ]
+        },
+                
+        {
+          "titulo": "Números Naturais",
+          "conteudo": [
+            "Os números que usamos para conta são principalmente 0, 1, 2, 3, 4, 5, 6, 7, 8, 9.",
+            "Podemos continuar a contar somente adicionando uma unidade ao ultimo numero para criar o seu sucessor, 9+1 = 10, 10+1=11, 11+1=12 ... 99+1=100.",
+            "Do mesmo jeito que fizemos para descobrir o sucessor de um numero podemos descobrir o numero antecessor, 9-1= 8, 8-1=7... 99-1=98.",
+            "Também tem os números consecutivos, ou os números em sequencia, os números 7, 8, 9 são números consecutivos, 15, 16 e 17 também são consecutivos.",
+            "Podemos ver outros tipos de sequencias de números naturais como:",
+            "Pares: 0,2,4,6,8,10,12,14...",
+            "Ímpares: 1,3,5,7,9,11,13,15,17..."
+          ]
+        }
+      ]
+    },
+    {
+      "nome": "Adição e Subtração de números naturais",
+      "introducao": [
+        "Adição: É a ideia de juntar quantidades. Ex: 7 (parcela) + 6 (parcela) = 13 (soma)",
+        "Subtração: É a ideia de diferença. Ex: 12 (minuendo) – 8 (subtraendo) = 4 (resto)"
+      ],
+      "subtopicos": [
+        {
+          "titulo": "Exemplos",
+          "conteudo": [
+            "Uma fábrica produziu em Maio: 256 sabonetes e 241 xampus",
+            "Em Junho: 158 sabonetes e 320 xampus",
+            "a) Soma das produções:",
+            "- Sabonetes: 256 + 158 = 414",
+            "- Xampus: 241 + 320 = 561",
+            "b) Diferença entre meses:",
+            "- Sabonetes: 256 - 158 = 98",
+            "- Xampus: 320 - 241 = 79"
+          ]
+        },
+        {
+          "titulo": "Explicação",
+          "conteudo": [
+            "Passo-a-passo:",
+            "1. Começamos pelas unidades",
+            "2. Depois dezenas, centenas...",
+            "3. Caso especial (empréstimo):",
+            "   - 320 - 241:",
+            "     • 0 < 1 → pegamos 1 dezena (2→1)",
+            "     • 10 - 1 = 9",
+            "     • 1 - 4 → pegamos 1 centena (3→2)",
+            "     • 11 - 4 = 7",
+            "     • 2 - 2 = 0",
+            "     • Resultado: 79"
+          ]
+        },
+        {
+          "titulo": "Operações inversas",
+          "conteudo": [
+            "Problema: Caixa com 42 jujubas (vermelhas + verdes)",
+            "Se vermelhas = 26:",
+            "Verdes = 42 - 26 = 16",
+            "Solução: 26 vermelhas e 16 verdes"
+          ]
+        }
+      ]
+    },
+    {
+      "nome": "Multiplicação e Divisão de um Numero Natural",
+      "introducao":[
+        "Ideia de Multiplicação:", "A multiplicação é uma forma que podemos usar para simplificar quando precisamos somar o mesmo numero varias vezes. Ex: Em um pacotinho de cartas vem 6 cartas, João comprou 4 Pacotinhos, quantas cartas João comprou ?",
+        "Podemos resolver isso  de suas formas", "1) 6+6+6+6 = 24", "2) 6x4 = 24","Viu como a multiplicação fica mais “fácil” e menor, e chegamos no mesmo resultado que somar varias vezes o mesmo numero.",
+        "Vamos pegar outro exemplo. Cada partida que Nicolas joga  ele ganha 12 pontos, quantos pontos ele vai ganhar se jogar 6 partidas ?",
+        "Vamos pegar outro exemplo. Cada partida que NIcolas joga ele ganha 12 pontos quantos pontos ele ganhar se jogar 6 partidas?",
+        "12 X 6 = ?", "Podemos decompor em dois essa multiplicação para ficar mais facil: 10X6 e 2X6, estudando mais sobre a tabuada e sabendo a tabuada do seis sabemos que",
+        "2X6 = 12", "10X6 = 60","Agora podemos somar esses dois resultados e saberemos a resposta, 60+12 = 72. Ao final Nicolas terá 72 pontos.",
+        
+        "Ideia de Divisão","Se a multiplicação é somar varias vezes o mesmo numero, a divisão podemos dizer que é subtrair varias vezes também, o resultado dessa conta é quantas vezes o divisor cabe dentro do dividendo.",
+        "Vamos pensar assim. Matheus tem 25 bombons para dividir com ele e mais 3 amigos, com quantos bombons cada garoto vai ficar ?", "Montando a conta fica assim : (dividendo) 25/4 (Divisor)",
+        "Para resolver vamos pensar assim, quantas vezes o numero 4 cabe dentro de 25?Usando a tabuada do 4 descobrimos que 4x6= 24, e é o menor numero e o mais próximo dentro da tabela do 4, então vamos usa-lo.",
+        "24/4 = 6(cociente)", "Então 25/4= 6 e sobra 1 qua chamamos de resto. Esse é o fin  da conta  dividindo os bombons que Matheus tem fica 6 para cada e sobra 1."
+      ],
+        "subtopicos":[{
+          "titulo": "Expressões Numéricas",
+          "conteudo":[
+          "Chamamos de Expressão Numérica a junção de mais operações em uma conta, por exemplo : 3+4X6.","Para resolver isso temos algumas regrinhas:","-Multiplicações e Divisões primerio na ordem que aparecerem (da esqueda para direita).",
+          "-Adição e Subtração depois, na ordem que aparecerem. ","Vamos resover a quele exemplo de cima: 3+4X6= 3+24= 27","Caso apareça um parêntese () no meio da expressão, devemos resolver o que esta dentro dele primeiro, depois continuamos com o que estiver fora do parêntese.",
+          "(7 x 2)- 6 +5= 14 – 6 + 5=8 + 5= 13"
+          ]
+        },
+        {
+          "titulo": "Distributiva",
+          "conteudo": [
+            "Se vamos multiplicar um numero resultado de uma soma (ou subtração) é a mesma coisa que a gente multiplicar os dois termos da soma ( ou subtração) e depois  efetuar a operação.",
+            "4 x (5+3)= 4 x 5 + 4 x 3= 20 + 12= 32"
+          ]
+        },
+        {
+          "titulo":"Potenciação e raiz Quadrada",
+          "conteudo":[
+            "Podemos usar a potenciação para representar uma multiplicação que um numero aparece varias vezes. Por exemplo: 2⁴ = 2x2x2x2 = 16. O dois é a base, e o quatro é o expoente, e se lê dois elevado a quarta potencia.",
+            "Quando o expoente é 2 devemos ler elevado ao quadrado, e quando for elevado a 3 se lê elevado ao cubo.","De vez ou outra vc pode ver alguns numeros elevados a 0 ou a 1, e esses dois expoentes tem suas particularidades, por exemplo o 1 o resultado vai ser igual a base, e o 0 o resultado será igual 1."            
+          ]
+        },
+        {
+          "titulo": "O que é Raiz Quadrada ?",
+          "conteudo":[ "A raiz quadrada serve quando queremos descobrir qual numero vezes ele mesmo é igual a nossa incógnita, por exemplo √49 = 7 (porque 7 × 7 = 49)"
+          ]
+        }
+      ]
+    },
+    {
+      "nome": "Múltiplos e Divisores",
+      "introducao":[
+        "Os conceitos de múltiplos e divisores são conceitos que vão te ajudar a entender muitas coisas da qui para a frente na Matemática "
+      ],
+      "subtopicos":[{
+        "titulo":"Multiplos",
+        "conteudo":["Um numero múltiplo do outro é quando ele aparece dentro da tabuada um do outro, por exemplo, O 15 é múltiplo de 3 porque esta dentro da tabuada do três (3 x  5 = 15).",
+            "Ex: Cecília tem uma maquina de doces que a cada girada ela solta 4 docinhos, se ela girar 1 vez sai 4 docinhos, se ela girar 2 vez sai 8 docinhos, se ela girar 3 vez sai 12 docinhos, se ela  girar 4 vez sai 16 docinhos. Todos esses números são múltiplos de 4."
+          ]
+        },
+        {
+          "titulo": "Divisores",
+          "conteudo":[
+            "Podemos pensar que os divisores de um numero são todos aqueles que cabem inteiros dentro dele, sem sobrar resto.",
+            "Ex: Ângela pretende comprar uma pizza de 15 fatias, e queria saber qual o máximo de amigos ela poderia chamar para que todos comam pelo menos um pedaço e não sobre nada. Podemos pensar assim:",
+            "Só Ângela = 15 ÷ 1 = 15 só para Ângela; ","Ângela mais duas amigas = 15 ÷ 3 = 5 pedaços para cada;", "Ângela mais 4 amigos = 15 ÷ 5 = 3 pedaços para cada;", "Ângela mais 14 amigos = 15 ÷ 15 = 1 pedaço para cada.",
+            "Conseguiu entender que os divisores de um numero são todos os números que podemos fazer e a divisão e não terá sobra, com o estudo da tabuada vc vai entendendo mais e mais. "
+          ]
+        },
+        {
+          "titulo": "Técnicas para poupar tempo",
+          "conteudo":[
+            "Quando o numero que queremos dividir e descobrir um divisor terminar em números pares como 0, 2, 4, 6, 8. Podemos tentar fazer a divisão por 2 de começo.",
+            "Ex: 684, 684÷2 = 342 (Aqui descobrimos também que 342 é um divisor de 684)",
+            "Quando o numero termina com 0, podemos tentar três possibilidades, o 2, 5 e 10, para tentar fazer a divisão.","Ex: 320 ÷ 2 = 160 ;","320 ÷ 5 = 64 ;","320 ÷ 10 = 32"
+          ]
+        },
+        {
+          "titulo":"Números primos",
+          "conteudo":[
+            "Existem números que não possuem divisores além de 1 e ele mesmo, chamamos eles de Números Primos, eles são infinitos e não possuem um padrão para aparecer.","Ex: 1, 2, 3, 5, 7, 9, 11, 13, 17, 19, 23, 29, 31, 37, 41, 43, 47.... assim por diante. Todos eles não tem um divisou a não ser por 1 e ele mesmo."
+          ]
+        }
+      ]
+    },
+    {
+      "nome": "Dados, Tabelas e Graficos de Barras",
+      "introducao":[
+        "Mas afinal oque é são dados e oque é um gráfico? Bom, quando falamos de dados não estamos falando dos quadrados brancos de seis lados que usamos para jogar jogos de tabuleiro, na verdade esses dados que estamos falando são pequenas informações que podemos receber sobre algo, como: quantos celulares foram vendidos no mês ? Essas informações se chamaram de dados. ",
+        "Ok, mas então oque são gráficos? Gráficos são uma forma de juntar dados, para assim analisar e comparar eles. No mundo existem vários tipos de gráficos, o que vamos ver nesse modulo é o gráfico de barras."
+      ],
+      
+      "subtopicos":[
+        {
+          "titulo":"Grafico de Barras",
+          "conteudo":[
+            "O gráfico de barrasa baixo mostra as vendas da primeira semana de cada mês de uma loja que vende eletrodomésticos para casa, onde o amarelo representa o Fogão, verde escuro representa a Televisão, verde claro é o Celular, e o azul representa as vendas do Liquidificador. ",
+            "Podemos ver que cada barra representa um produto que a loja vende, o eixo de baixo representa os meses, já o eixo vertical mostra a quantidade de venda de cada produto por mês, agora que sabemos o que cada parte do gráfico representa, podemos fazer a analise de qual produto vendeu mais e quais venderam menos."
+            ],
+          "imagem":"/img/grafico.png"
+          
+        },
+        {
+          "titulo":"Vamos aprender a fazer um gráfico",
+          "conteudo":[
+            "Para fazer um gráfico de barras precisamos seguir alguns passos, primeiro definir o titulo do gráfico, depois precisamos fazer a base do gráfico, os eixos vertical e horizontal, agora podemos dividir o eixo horizontal na quantidade de barras que vamos precisar para o gráfico, o eixo vertical serve para registrar a frequência de cada resposta. E finalmente depois de definir tudo isso pode preencher os retângulos, defina uma cor para as colunas e pronto "
+          ]
+        }
+      ]
+    }
+  ]
+}
