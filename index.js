@@ -1,6 +1,8 @@
 const express = require('express');
 const path = require('path');
 const app = express();
+const {gerarNumero} = require('./utils/numeros');
+const bodyParser = require('body-parser');
 const port = 8080;
 
 // Carrega os dados do 6º ano
@@ -10,6 +12,8 @@ const dados = require('./6.json');
 app.set('view engine', 'ejs');
 app.set('views', path.join(__dirname, 'views'));
 app.use(express.static(path.join(__dirname, 'public')));
+app.use(bodyParser.urlencoded({ extended: true}));
+let currentChallenge = null;
 
 // Rotas
 app.get('/', (req, res) => {
@@ -47,6 +51,41 @@ app.get('/materias/:ano', (req, res) => {
 // Rota do sobre
 app.get('/sobre', (req, res) => {
   res.render('sobre');
+});
+
+//rota para os numeros 
+app.get('/exercicio', (req, res)=>{
+  const numeros = gerarNumero();
+  res.render('exercicio', {
+    numeros:{
+      total: numeros.num1,
+      comidos: numeros.num2,
+      sobre: numeros.resultado
+    },
+    feedback: null
+  });
+});
+
+app.post('/verificar', (req, res) => {
+    if (!currentChallenge) {
+    return res.redirect('/exercicio'); // Redireciona se não houver desafio
+  }
+
+  const respostaUsuario = parseInt(req.body.resposta);
+  if (isNaN(respostaUsuario)) {
+    return res.status(400).send('Resposta inválida');
+  }
+
+
+  const feedback = {
+    respostaUsuario: respostaUsuario,
+    correto: respostaUsuario === currentChallenge.resultadoCorreto,
+    resultadoCorreto: currentChallenge.resultadoCorreto
+  };
+    res.render('numeros', {
+    challenge: currentChallenge,
+    feedback: feedback
+  });
 });
 
 // Inicia o servidor

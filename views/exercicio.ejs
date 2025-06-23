@@ -7,7 +7,7 @@
     <link rel="icon" href="/img/LogoTipo.png" type="image/png">
     <meta name='viewport' content='width=device-width, initial-scale=1'>
     <link rel='stylesheet' type='text/css' media='screen' href='/css/cabeca.css'>
-
+    <link rel="stylesheet" href="/css/questao.css">
     
 </head>
 <body>
@@ -19,6 +19,15 @@
                 <button class="navbar-button"><a href="/">Home</a></button>
             </div>
     </header>
-    
+
+    <div class="challenge container ">
+      <h3>Pietro tem uma caixa de doces, que dentro dela tem <strong><%= numeros.total%></strong> bombons, se ele comer <strong><%= numeros.comidos%></strong>, quantos bombons vão sobrar ? </h3>
+      
+      <form action="/verificar" method="POST">
+        <input type="number" name="resposta" required placeholder="Sua resposta">
+        <button type="submit">Verificar</button>
+      </form>
+    </div>
+
 </body>
 </html>

@@ -50,3 +50,12 @@ header{
 img{
     width: 125px;
 }
+
+a{
+    color: black;
+    text-decoration: none;
+}
+
+a:hover{
+    color: #14939e;
+}
