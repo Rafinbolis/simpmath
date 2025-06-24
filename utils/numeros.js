@@ -6,18 +6,26 @@ function gerarNumero(){
     do {
         y = Math.floor(Math.random()*12 );
     } while (y>x || y==0);
-    const resultado = x-y;
+    
     return{
         num1: x,
-        num2: y,
-        correto: resultado,
-        desenvover: `A forma certa de fazer essa conta é ${x} - ${y}= ${resultado}`
+        num2: y,  
     };
 
 }
 
+function calcular(){
+    return{
+        sub: num1 - num2,
+        som: num1 + num2,
+        multi: num1 * num3,
+        divi: num1/ num2,
+    }
+}
 
 
 module.exports={
-    gerarNumero
+    gerarNumero,
+    calcular
+
 }

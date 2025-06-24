@@ -5,8 +5,11 @@ const {gerarNumero} = require('./utils/numeros');
 const bodyParser = require('body-parser');
 const port = 8080;
 
-// Carrega os dados do 6º ano
-const dados = require('./6.json');
+// Carrega os dados do de todos os anos ano
+const dados = require('./public/data/6materia.json');
+//const dados = require('./public/data/7.json');
+//const dados = require('./public/data/8.json');
+//const dados = require('./public/data/9.json');
 
 // Configuração do EJS e arquivos estáticos
 app.set('view engine', 'ejs');

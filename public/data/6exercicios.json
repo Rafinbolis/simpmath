@@ -1,0 +1,39 @@
+{
+    "questoes":[
+        {
+            "tema": "Sistemas de Numeração Decimal",
+            "perguntas":[
+                {
+                    "id": 1,           
+                    "enunciado": ["Descubra o segredo da sequência e continue-a.", " V - X - XV - ? - ? - ?"],
+                    "opcoes":[
+                    "A) XX - XXV - XXX",
+                    "B) XI - XVI - XX",
+                    "C) XVI - XVII - XVIII",
+                    "D) XV - XXV - XXXV"
+                    ],
+                    "resposta": "A",
+                    "explicaco": " A sequencia mostrado no enunciado segue o padrão de 5 em 5, que é representado pela letra grega 'V' então é só pensar que estamos somando cinco em ciam do numero anterior, então seguindo isso a ordem correta seria 5(V) - 10(X) - 15(XV) - 20(XX) - 25(XXV) - 30(XXX)."
+
+                },
+                {
+                    "id": 2,
+                    "enunciado":[ "Descubra o segredo da sequência e continue-a.", "B) III - VI - IX - ? - ? "],
+                    "opcoes":[
+                        "A) X - XV ",
+                        "B) XI - XV",
+                        "C) XII - XV",
+                        "D) XIII - XVI"
+                    ]
+                }
+            ]
+            
+        },
+        {
+            "id": 2,
+            "nome":"Adição e Subtração de números naturais",
+            "enunciado":"Pietro tem uma caixa de doces, que dentro dela tem {num1} bombons, se ele comer {num2}, quantos bombons vão sobrar ?",
+            "resposta":"Se na caixa tinha {num1} bombons e Pietro comeu {num2}, é só subitrairmos um numero do outro, assim {num1} - {num2} = {sub}"
+        }
+    ]
+}
