@@ -20,13 +20,16 @@
             </div>
     </header>
 
-    <div class="challenge container ">
-      <h3>Pietro tem uma caixa de doces, que dentro dela tem <strong><%= numeros.total%></strong> bombons, se ele comer <strong><%= numeros.comidos%></strong>, quantos bombons vão sobrar ? </h3>
-      
-      <form action="/verificar" method="POST">
-        <input type="number" name="resposta" required placeholder="Sua resposta">
-        <button type="submit">Verificar</button>
-      </form>
+    <div class=" container">
+      <div class="challenge">
+          <p class="question-text">Pietro tem uma caixa de doces, que dentro dela tem <strong><%= numeros.total%></strong> bombons, se ele comer <strong><%= numeros.comidos%></strong>, quantos bombons vão sobrar ? </p>
+          <div ss="answer">
+            <form action="/verificar" method="POST">
+              <input type="number" name="resposta" required placeholder="Sua resposta">
+              <button type="submit" class="verificar">Verificar</button>
+            </form>
+          </div>
+      </div>
     </div>
 
 </body>

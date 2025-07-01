@@ -24,16 +24,25 @@
                         "B) XI - XV",
                         "C) XII - XV",
                         "D) XIII - XVI"
-                    ]
+                    ],
+                    "resposta":"C",
+                    "explicaco": "A sequencia mostrado no enunciado segue o padrão de 3 em 3, que é representado pela sequencia de letras gregas 'III' então é só pensar que estamos somando três em ciam do numero anterior, então seguindo isso a ordem correta seria 3(III) - 6(XI) - 9(IX) - 12(XII) - 15(XV)."
                 }
             ]
             
         },
         {
-            "id": 2,
-            "nome":"Adição e Subtração de números naturais",
-            "enunciado":"Pietro tem uma caixa de doces, que dentro dela tem {num1} bombons, se ele comer {num2}, quantos bombons vão sobrar ?",
-            "resposta":"Se na caixa tinha {num1} bombons e Pietro comeu {num2}, é só subitrairmos um numero do outro, assim {num1} - {num2} = {sub}"
+            
+          
+            "tema":"Adição e Subtração de números naturais",
+            "pergunta":[
+                {
+                "enunciado":"Pietro tem uma caixa de doces, que dentro dela tem {num1} bombons, se ele comer {num2}, quantos bombons vão sobrar ?",
+                "resposta": "{num1 - num2}",
+                "explicao":"Se na caixa tinha {num1} bombons e Pietro comeu {num2}, é só subitrairmos um numero do outro, assim {num1} - {num2} = {num1 - num2}"
+                }
+            ]
+            
         }
     ]
 }
