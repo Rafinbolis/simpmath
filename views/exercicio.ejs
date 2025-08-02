@@ -20,17 +20,67 @@
             </div>
     </header>
 
-    <div class=" container">
-      <div class="challenge">
-          <p class="question-text">Pietro tem uma caixa de doces, que dentro dela tem <strong><%= numeros.total%></strong> bombons, se ele comer <strong><%= numeros.comidos%></strong>, quantos bombons vão sobrar ? </p>
-          <div ss="answer">
-            <form action="/verificar" method="POST">
-              <input type="number" name="resposta" required placeholder="Sua resposta">
-              <button type="submit" class="verificar">Verificar</button>
-            </form>
-          </div>
-      </div>
-    </div>
+   <div class="conteiner">
+        <div class="esquerda">
+            <div id="sexto">
+                <h2>6° ano</h2>
+                <ul>
+                    <% if (ano6 && ano6.materias) { %>
+                        <% ano6.materias.forEach((materia, index) => { %>
+                            <li>
+                                <a href="/materias/6/<%= index %>"><%= materia.nome %></a>
+                            </li>
+                    <% }) %>
+                    <% } else {%>
+                        <li>Nenhuma materia diponivel</li>
+                    <% }%>
+                </ul>
+            </div>
+            
+            <!-- 7° ANO -->
+            <div id="setimo">
+                <h2>7° ano</h2>
+                <ul>
+                    <% if (ano7 && ano7.materias) {%>
+                    <% ano7.materias.forEach((materia, index)=> { %>
+                        <li><a href="/materias/7/<%= index %>"><%= materia.nome%></a></li>
+                    <% }) %>
+                    <%} else {%>
+                        <li>Nenhuma materia diponivel</li>
+                    <%}%>
+                </ul>
+            </div>
+            
+            <!-- 8° ANO -->
+            <div id="oitavo">
+                <h2>8° ano</h2>
+                <ul>
+                    <% if (ano8 && ano8.materias) {%>
+                    <% ano8.materias.forEach((materia, index)=> { %>
+                        <li><a href="/materias/8/<%= index %>"><%= materia.nome%></a></li>
+                    <% }) %>
+                    <% } else {%>
+                        <li>Nenhuma materia diponivel</li>
+                    <%}%>
+                </ul>
+            </div>
+            
+            <!-- 9° ANO -->
+            <div id="nono">
+                <h2>9° ano</h2>
+                <ul>
+                    <% if (ano9 && ano9.materias) {%>
+                    <% ano9.materias.forEach((materia, index)=> { %>
+                        <li><a href="/materias/9/<%= index %>"><%= materia.nome%></a></li>
+                    <% }) %>
+                    <%} else {%>
+                        <li>Nenhuma materia diponivel</li>
+                    <%}%>
+        </div>
+        <div class="questao">
+
+        </div>
+   </div>
 
 </body>
 </html>

@@ -35,9 +35,15 @@
             <div id="sexto">
                 <h2>6° ano</h2>
                 <ul>
-                    <% dados6.materias.forEach((materia, index) => { %>
-                        <li><a href="/materias/6/<%= index %>"><%= materia.nome %></a></li>
+                    <% if (ano6 && ano6.materias) { %>
+                        <% ano6.materias.forEach((materia, index) => { %>
+                            <li>
+                                <a href="/materias/6/<%= index %>"><%= materia.nome %></a>
+                            </li>
                     <% }) %>
+                    <% } else {%>
+                        <li>Nenhuma materia diponivel</li>
+                    <% }%>
                 </ul>
             </div>
             
@@ -45,10 +51,13 @@
             <div id="setimo">
                 <h2>7° ano</h2>
                 <ul>
-                    <li><a href="">Números racionais</a></li>
-                    <li><a href="">Expressões algébricas</a></li>
-                    <li><a href="">Geometria plana</a></li>
-                    <li><a href="">Razão</a></li>
+                    <% if (ano7 && ano7.materias) {%>
+                    <% ano7.materias.forEach((materia, index)=> { %>
+                        <li><a href="/materias/7/<%= index %>"><%= materia.nome%></a></li>
+                    <% }) %>
+                    <%} else {%>
+                        <li>Nenhuma materia diponivel</li>
+                    <%}%>
                 </ul>
             </div>
             
@@ -56,10 +65,13 @@
             <div id="oitavo">
                 <h2>8° ano</h2>
                 <ul>
-                    <li><a href="">Números inteiros e racionais</a></li>
-                    <li><a href="">Equações do 1º grau</a></li>
-                    <li><a href="">Geometria espacial</a></li>
-                    <li><a href="">Funções</a></li>
+                    <% if (ano8 && ano8.materias) {%>
+                    <% ano8.materias.forEach((materia, index)=> { %>
+                        <li><a href="/materias/8/<%= index %>"><%= materia.nome%></a></li>
+                    <% }) %>
+                    <% } else {%>
+                        <li>Nenhuma materia diponivel</li>
+                    <%}%>
                 </ul>
             </div>
             
@@ -67,10 +79,13 @@
             <div id="nono">
                 <h2>9° ano</h2>
                 <ul>
-                    <li><a href="">Trigonometria básica</a></li>
-                    <li><a href="">Equação de 2° grau</a></li>
-                    <li><a href="">Geometria analítica</a></li>
-                    <li><a href="">Probabilidade</a></li>
+                    <% if (ano9 && ano9.materias) {%>
+                    <% ano9.materias.forEach((materia, index)=> { %>
+                        <li><a href="/materias/9/<%= index %>"><%= materia.nome%></a></li>
+                    <% }) %>
+                    <%} else {%>
+                        <li>Nenhuma materia diponivel</li>
+                    <%}%>
                 </ul>
             </div>
         </div>

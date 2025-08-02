@@ -6,10 +6,14 @@ const bodyParser = require('body-parser');
 const port = 8080;
 
 // Carrega os dados do de todos os anos ano
-const dados = require('./public/data/6materia.json');
-//const dados = require('./public/data/7.json');
-//const dados = require('./public/data/8.json');
-//const dados = require('./public/data/9.json');
+
+const materia6 = require('./public/data/6materia.json');
+const materia7 = require('./public/data/7.json');
+const materia8 = require('./public/data/8.json');
+const materia9 = require('./public/data/9.json');
+
+const exercicio6 = require('./public/data/6exercicios.json');
+
 
 // Configuração do EJS e arquivos estáticos
 app.set('view engine', 'ejs');
@@ -18,10 +22,14 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.use(bodyParser.urlencoded({ extended: true}));
 let currentChallenge = null;
 
+ 
 // Rotas
 app.get('/', (req, res) => {
   res.render('inicio', {
-    dados6: dados,  // Mudamos de 'dados' para 'dados6' para combinar com o EJS
+     ano6: materia6,
+     ano7: materia7,
+     ano8: materia8,
+     ano9: materia9, // Mudamos de 'dados' para 'dados6' para combinar com o EJS
     mostrarOutrosAnos: false
   });
 });
@@ -29,7 +37,10 @@ app.get('/', (req, res) => {
 // Rota para listar todas as matérias
 app.get('/materias', (req, res) => {
   res.render('materias', {
-    materias: dados.materias,
+    ano6: materia6,
+    ano7: materia7,
+    ano8: materia8,
+    ano9: materia9,
     materiaAtual: null
   });
 });
@@ -37,12 +48,57 @@ app.get('/materias', (req, res) => {
 // Rota para matérias específicas do 6º ano
 app.get('/materias/6/:id(\\d+)', (req, res) => {
   const id = parseInt(req.params.id);
-  if (id >= dados.materias.length) {
+  if (id >= materia6.materias.length) {
     return res.status(404).send('Matéria não encontrada');
   }
   res.render('materias', {
-    materias: dados.materias,
-    materiaAtual: dados.materias[id]
+    ano6: materia6,
+    ano7: materia7,
+    ano8: materia8,
+    ano9: materia9,
+    materiaAtual: materia6.materias[id]
+  });
+});
+
+app.get('/materias/7/:id(\\d+)', (req, res) => {
+  const id = parseInt(req.params.id);
+  if (id >= materia7.materias.length) {
+    return res.status(404).send('Matéria não encontrada');
+  }
+  res.render('materias', {
+    ano6: materia6,
+    ano7: materia7,
+    ano8: materia8,
+    ano9: materia9,
+    materiaAtual: materia7.materias[id]
+  });
+});
+
+app.get('/materias/8/:id(\\d+)', (req, res) => {
+  const id = parseInt(req.params.id);
+  if (id >= materia8.materias.length) {
+    return res.status(404).send('Matéria não encontrada');
+  }
+  res.render('materias', {
+    ano6: materia6,
+    ano7: materia7,
+    ano8: materia8,
+    ano9: materia9,
+    materiaAtual: materia8.materias[id]
+  });
+});
+
+app.get('/materias/9/:id(\\d+)', (req, res) => {
+  const id = parseInt(req.params.id);
+  if (id >= materia9.materias.length) {
+    return res.status(404).send('Matéria não encontrada');
+  }
+  res.render('materias', {
+    ano6: materia6,
+    ano7: materia7,
+    ano8: materia8,
+    ano9: materia9,
+    materiaAtual: materia9.materias[id]
   });
 });
 
@@ -57,16 +113,22 @@ app.get('/sobre', (req, res) => {
 });
 
 //rota para os numeros 
-app.get('/exercicio', (req, res)=>{
+app.get('/exercicio/6/:id(\\d+)', (req, res)=>{
+  const id = parseInt(req.params.id);
   const numeros = gerarNumero();
   res.render('exercicio', {
     numeros:{
       total: numeros.num1,
       comidos: numeros.num2,
       sobre: numeros.resultado
-    },
+      },
+      ano6: materia6,
+      ano7: materia7,
+      ano8: materia8,
+      ano9: materia9,
     feedback: null
   });
+  
 });
 
 app.post('/verificar', (req, res) => {
