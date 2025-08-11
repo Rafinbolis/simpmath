@@ -55,12 +55,11 @@ details {
 summary {
     font-weight: bold;
     cursor: pointer;
+    list-style: none;
     
 }
 
-summary {
-    list-style: none; 
-}
+
 
 details[open] {
     background-color: #f9f9f9;

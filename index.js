@@ -113,22 +113,63 @@ app.get('/sobre', (req, res) => {
 });
 
 //rota para os numeros 
-app.get('/exercicio/6/:id(\\d+)', (req, res)=>{
-  const id = parseInt(req.params.id);
-  const numeros = gerarNumero();
-  res.render('exercicio', {
-    numeros:{
-      total: numeros.num1,
-      comidos: numeros.num2,
-      sobre: numeros.resultado
+app.get('/exercicios', (req, res) => {
+  try {
+    const materiaId = parseInt(req.query.materia);
+    const ano = req.query.ano || '6';
+    const numeros = gerarNumero();
+    
+    // Verifica se materiaId é um número válido
+    if (isNaN(materiaId)) {
+      return res.status(400).send('ID da matéria inválido');
+    }
+
+    // Seleciona os dados do ano correto
+    let materiaData;
+    switch(ano) {
+      case '6': materiaData = materia6; break;
+      case '7': materiaData = materia7; break;
+      case '8': materiaData = materia8; break;
+      case '9': materiaData = materia9; break;
+      default: materiaData = materia6;
+    }
+
+    // Verifica se encontrou a matéria
+    const materiaAtual = materiaData.materias.find(m => m.id === materiaId);
+    
+    if (!materiaAtual) {
+      console.error(`Matéria não encontrada - ID: ${materiaId}, Ano: ${ano}`);
+      return res.status(404).render('exercicios', {
+        error: 'Matéria não encontrada',
+        ano6: materia6,
+        ano7: materia7,
+        ano8: materia8,
+        ano9: materia9
+      });
+    }
+
+    // Encontra exercícios do mesmo tema (usando nome em vez de tema)
+    const exerciciosDoTema = exercicio6.questoes.find(q => q.tema === materiaAtual.nome);
+    
+    res.render('exercicios', {
+      numeros: {
+        total: numeros.num1,
+        comidos: numeros.num2,
+        sobre: numeros.resultado
       },
+      materiaAtual: materiaAtual,
+      exercicios: exerciciosDoTema || null,
       ano6: materia6,
       ano7: materia7,
       ano8: materia8,
       ano9: materia9,
-    feedback: null
-  });
-  
+      feedback: null
+    });
+
+  } catch (error) {
+    console.error('Erro na rota /exercicios:', error);
+    res.status(500).send('Erro interno do servidor');
+  }
 });
 
 app.post('/verificar', (req, res) => {

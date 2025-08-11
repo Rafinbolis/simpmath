@@ -21,7 +21,7 @@
     </header>
 
    <div class="conteiner">
-        <div class="esquerda">
+      <div class="esquerda">
             <div id="sexto">
                 <h2>6° ano</h2>
                 <ul>
@@ -76,11 +76,61 @@
                     <%} else {%>
                         <li>Nenhuma materia diponivel</li>
                     <%}%>
+            </div>
         </div>
         <div class="questao">
+        <% if (materiaAtual && exercicios) { %>
+          <h1>Exercícios: <%= materiaAtual.nome %></h1>
+          
+          <% exercicios.perguntas.forEach((exercicio, index) => { %>
+            <div class="exercicio-card">
+              <h3>Exercício <%= index + 1 %></h3>
+              
+              <!-- Enunciado -->
+              <div class="enunciado">
+                <% if (Array.isArray(exercicio.enunciado)) { %>
+                  <% exercicio.enunciado.forEach(linha => { %>
+                    <p><%= linha %></p>
+                  <% }); %>
+                <% } else { %>
+                  <p><%= exercicio.enunciado %></p>
+                <% } %>
+              </div>
 
-        </div>
-   </div>
+              <!-- Opções (se existirem) -->
+              <% if (exercicio.opcoes) { %>
+                <div class="opcoes">
+                  <% exercicio.opcoes.forEach(opcao => { %>
+                    <div class="opcao">
+                      <input 
+                        type="radio" 
+                        name="ex<%= index %>" 
+                        id="ex<%= index %>-<%= opcao.split(')')[0] %>"
+                      >
+                      <label for="ex<%= index %>-<%= opcao.split(')')[0] %>">
+                        <%= opcao %></label>
+                    </div>
+                  <% }); %>
+                </div>
+              <% } %>
+
+              <!-- Botão para ver resposta -->
+              <button class="btn-ver-resposta" data-target="resposta-<%= index %>">
+                Ver Resposta
+              </button>
+
+              <!-- Resposta (oculta inicialmente) -->
+              <div class="resposta" id="resposta-<%= index %>">
+                <p><strong>Resposta correta:</strong> <%= exercicio.resposta %></p>
+                <p class="explicacao"><%= exercicio.explicacao %></p>
+              </div>
+            </div>
+          <% }); %>
+        <% } else { %>
+          <p>Nenhum exercício disponível para este tema.</p>
+        <% } %>
+    </div>
+   
 
 </body>
 </html>

@@ -5,8 +5,10 @@
 .conteiner{
     display: flex;
     justify-content: center;
-    align-items: center;
-    height: 100vh;
+    align-items: flex-start; /* Alinha no topo */
+    min-height: 100vh;
+    padding: 20px;
+    gap: 20px; /* Espaço entre as colunas */
 }
 
 .esquerda{
@@ -18,8 +20,10 @@
     padding-left: 10px;
     margin-left: 3%;
     margin-top: 20px;
-    width: 15%;
-    height: 80%;
+    width: 20%; 
+    height: auto;
+    position: sticky;
+    top: 20px;
 }
 
 .questao{
@@ -33,3 +37,49 @@
     width: 60%
 }
 
+details {
+    margin: 20px 0;
+    border: 1px ;
+    border-radius: 10px;
+    padding: 20px;
+    cursor: pointer;
+    width: 125px;
+}
+
+summary {
+    font-weight: bold;
+    cursor: pointer;
+    list-style: none;
+    
+}
+
+
+
+details[open] {
+    background-color: #f9f9f9;
+}
+
+a{
+    color: black;
+    text-decoration: none;
+}
+
+a:hover{
+    color: #14939e;
+}
+
+ul{
+    text-align: left;
+    padding-left: 10px;
+}
+
+li{
+    border: 1px solid #ccc;  /* Cor cinza clara */
+    border-radius: 4px;
+}
+
+li:hover {
+    border: 1px solid #6a249f; 
+    background-color: #e8f5e9;  
+    transition: all 0.3s ease; /* Animação suave */
+}
