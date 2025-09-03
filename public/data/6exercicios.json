@@ -39,10 +39,41 @@
             "perguntas":[
                 {
                 "enunciado":"Pietro tem uma caixa de doces, que dentro dela tem {num1} bombons, se ele comer {num2}, quantos bombons vão sobrar ?",
-                "resposta": "{num1 - num2}. Se na caixa tinha {num1} bombons e Pietro comeu {num2}, é só subitrairmos um numero do outro, assim {num1} - {num2} = {num1 - num2}"
-                }
+                "resposta": "{num1 - num2}. Se na caixa tinha {num1} bombons e Pietro comeu {num2}, é só subitrairmos um numero do outro, assim {num1} - {num2} = {num1 - num2}",
+                "minimo":1,
+                "maximo": 12
+            },
+                {
+                "enunciado":"Lorenzo tinha {num1} figutinhas, mas ganhou {num2} de um de seus amigos, quantas figuniunhas Lorernzo ficou no final ?",
+                "resposta":"{num1 + num2}. Como Lorenzo tinha {num1} basta adiocionar a quantidade quer ele ganhou, que foi {num2}, essa conta fica assim {num1} + {num2} = {num1 + num2}",
+                "maximo":12,
+                "minimo":2   
+            }
+
             ]
             
+        },
+        {
+            "id":3,
+            "tema":"Multiplicação e Divisão de um Numero Natural",
+            "perguntas":[
+                {
+                    "enunciado": "Em uma escola cada sala tem {num1} carteiras. Se na mesma escola tem {num2} salas, quantas carteiras tem no total?",
+                    "resposta": "Tem {num1 * num2} cadeiras. Em cada sala temos {num1} carteiras em cada sala, e temos {num2} salas, fazemos a multiplicação do numero de carteiras pelo numero de salas a conta fica assim {num1} x {num2} = {num1 * num2}.",
+                    "maximo":20,
+                    "minimo":5
+                },
+                {
+                    "enunciado": "Cecilia cortou um bolo em {num1} pedaços iguais para {num2} pessoas.Quantos pedaçoes cada pessoa irá receber?",
+                    "resposta": "Cada pessoa vão poder pegar {num1 / num2}, temos {num1} pedaços para {num2} pessoas, pegamos o numero de pedaços e dividimos pelo numero de pessoas, a conta fica assim: {num1} ÷ {num2} = {num1 / num2}",
+                    "maximo":12,
+                    "minimo":2,
+                    "config":{
+                        "num1Maior": true,
+                        "divisivelPor": "num2"
+                    }
+                }
+            ]
         }
     ]
 }

@@ -117,7 +117,6 @@ app.get('/exercicios', (req, res) => {
   try {
     const materiaId = parseInt(req.query.materia);
     const ano = req.query.ano || '6';
-    const numeros = gerarNumero();
     
     // Verifica se materiaId é um número válido
     if (isNaN(materiaId)) {
@@ -148,17 +147,16 @@ app.get('/exercicios', (req, res) => {
       });
     }
 
-    // Encontra exercícios do mesmo tema (usando nome em vez de tema)
+    // Encontra exercícios do mesmo tema
     const exerciciosDoTema = exercicio6.questoes.find(q => q.tema === materiaAtual.nome);
     
+    // Processa os exercícios (agora a geração de números é feita dentro do processamento)
+    const exerciciosProcessados = exerciciosDoTema ? 
+        processarExerciciosComNumeros(exerciciosDoTema) : null;
+
     res.render('exercicios', {
-      numeros: {
-        total: numeros.num1,
-        comidos: numeros.num2,
-        sobre: numeros.resultado
-      },
       materiaAtual: materiaAtual,
-      exercicios: exerciciosDoTema || null,
+      exercicios: exerciciosProcessados,
       ano6: materia6,
       ano7: materia7,
       ano8: materia8,
@@ -172,27 +170,140 @@ app.get('/exercicios', (req, res) => {
   }
 });
 
-app.post('/verificar', (req, res) => {
-    if (!currentChallenge) {
-    return res.redirect('/exercicio'); // Redireciona se não houver desafio
-  }
-
-  const respostaUsuario = parseInt(req.body.resposta);
-  if (isNaN(respostaUsuario)) {
-    return res.status(400).send('Resposta inválida');
-  }
-
-
-  const feedback = {
-    respostaUsuario: respostaUsuario,
-    correto: respostaUsuario === currentChallenge.resultadoCorreto,
-    resultadoCorreto: currentChallenge.resultadoCorreto
-  };
-    res.render('numeros', {
-    challenge: currentChallenge,
-    feedback: feedback
+function substituirVariaveis(texto, numeros) {
+  if (typeof texto !== 'string') return texto;
+  
+  return texto.replace(/{([^{}]+)}/g, (match, expressao) => {
+    console.log(`Processando expressão: ${expressao}`);
+    
+    // Primeiro, verifica se é uma variável direta
+    if (numeros[expressao] !== undefined) {
+      return numeros[expressao].toString();
+    }
+    
+    // Tenta avaliar a expressão matemática
+    try {
+      // Substitui variáveis pelos valores - IMPORTANTE: mantém os operadores
+      let expressaoProcessada = expressao;
+      
+      // Substitui cada variável pelo seu valor
+      Object.keys(numeros).forEach(variavel => {
+        // Usa regex com word boundaries para substituir apenas a variável completa
+        const regex = new RegExp(`\\b${variavel}\\b`, 'g');
+        expressaoProcessada = expressaoProcessada.replace(regex, numeros[variavel]);
+      });
+      
+      console.log(`Expressão processada: ${expressaoProcessada}`);
+      
+      // Remove possíveis espaços em branco extras
+      expressaoProcessada = expressaoProcessada.replace(/\s+/g, '');
+      
+      // Avalia a expressão matemática com segurança
+      const resultado = Function('"use strict"; return (' + expressaoProcessada + ')')();
+      
+      console.log(`Resultado: ${resultado}`);
+      
+      // Formata números decimais se necessário
+      return Number.isInteger(resultado) ? resultado.toString() : resultado.toFixed(2);
+    } catch (error) {
+      console.error(`Erro ao processar expressão: ${expressao}`, error);
+      // Se não conseguir avaliar, mantém o original
+      return match;
+    }
   });
-});
+}
+// Nova função para processar exercícios com geração de números específica
+function processarExerciciosComNumeros(exercicios) {
+  if (!exercicios || !exercicios.perguntas) return exercicios;
+  
+  const exerciciosProcessados = JSON.parse(JSON.stringify(exercicios));
+  
+  exerciciosProcessados.perguntas.forEach((pergunta, perguntaIndex) => {
+    console.log(`\nProcessando pergunta ${perguntaIndex + 1}`);
+    
+    // Gera números específicos para cada pergunta
+    const parametros = {
+      qtd: 2,
+      min: pergunta.minimo || 1,
+      max: pergunta.maximo || 12
+    };
+    
+    // CONFIGURAÇÕES - USE APENAS ESTA DECLARAÇÃO
+    const config = pergunta.config || {}; // Pega config do JSON ou objeto vazio
+    
+    // Detecta automaticamente o tipo de operação
+    const textoCompleto = JSON.stringify(pergunta).toLowerCase();
+    
+    if (!config.evitarNegativos && (textoCompleto.includes('{num1 - num2') || 
+        textoCompleto.includes('subtrair') ||
+        textoCompleto.includes('sobrar') ||
+        textoCompleto.includes('restar') ||
+        textoCompleto.includes('diferença'))) {
+      config.evitarNegativos = true;
+    }
+    
+    if (!config.num1Maior && (textoCompleto.includes('{num1 / num2') || 
+        textoCompleto.includes('dividir') ||
+        textoCompleto.includes('divisão') ||
+        textoCompleto.includes('repartir') ||
+        textoCompleto.includes('pedaços'))) {
+      config.num1Maior = true;
+      
+      // Para divisão exata, podemos forçar que num1 seja divisível por num2
+      if (textoCompleto.includes('pedaços') && textoCompleto.includes('pessoas')) {
+        config.divisivelPor = 'num2';
+      }
+    }
+    
+    console.log(`Parâmetros: min=${parametros.min}, max=${parametros.max}, config=`, config);
+    
+    const valores = gerarNumero(parametros.qtd, parametros.min, parametros.max, config);
+    const numeros = {};
+    
+    // Cria objeto com nomes de variáveis (num1, num2, etc.)
+    for (let i = 0; i < valores.length; i++) {
+      numeros[`num${i + 1}`] = valores[i];
+    }
+    
+    console.log(`Números gerados:`, numeros);
+    
+    // Adiciona variáveis para operações comuns
+    numeros.soma = valores.reduce((a, b) => a + b, 0);
+    numeros.diferenca = Math.abs(valores[0] - valores[1]);
+    numeros.produto = valores.reduce((a, b) => a * b, 1);
+    
+    // Para divisão, adiciona resultado exato
+    if (config.num1Maior) {
+      numeros.divisao = valores[0] / valores[1];
+      numeros.divisaoExata = (valores[0] % valores[1] === 0);
+    }
+    
+    console.log(`Números completos:`, numeros);
+    
+    // Processa todos os textos
+    if (Array.isArray(pergunta.enunciado)) {
+      pergunta.enunciado = pergunta.enunciado.map(linha => 
+        substituirVariaveis(linha, numeros)
+      );
+    } else {
+      pergunta.enunciado = substituirVariaveis(pergunta.enunciado, numeros);
+    }
+    
+    if (pergunta.resposta) {
+      pergunta.resposta = substituirVariaveis(pergunta.resposta, numeros);
+    }
+    
+    if (pergunta.explicacao) {
+      pergunta.explicacao = substituirVariaveis(pergunta.explicacao, numeros);
+    }
+    
+    pergunta.numerosGerados = numeros;
+  });
+  
+  return exerciciosProcessados;
+}
+
+
 
 // Inicia o servidor
 app.listen(port, () => {

@@ -9,19 +9,79 @@
     <link rel='stylesheet' type='text/css' media='screen' href='/css/cabeca.css'>
     <link rel="stylesheet" href="/css/questao.css">
     
+    <style>
+        /* Estilos adicionais */
+        .resposta {
+            display: none;
+            margin-top: 15px;
+            padding: 15px;
+            background-color: #f8f9fa;
+            border-left: 4px solid #007bff;
+            border-radius: 4px;
+        }
+        
+        .resposta-correta {
+            border-left-color: #28a745;
+        }
+        
+        .resposta-incorreta {
+            border-left-color: #dc3545;
+        }
+        
+        .campo-resposta {
+            margin: 15px 0;
+            padding: 10px;
+            width: 100%;
+            max-width: 300px;
+            border: 1px solid #ced4da;
+            border-radius: 4px;
+        }
+        
+        .btn-verificar {
+            background-color: #007bff;
+            color: white;
+            border: none;
+            padding: 10px 15px;
+            border-radius: 4px;
+            cursor: pointer;
+            margin-right: 10px;
+        }
+        
+        .btn-verificar:hover {
+            background-color: #0069d9;
+        }
+        
+        .feedback {
+            margin-top: 10px;
+            font-weight: bold;
+        }
+        
+        .feedback.correto {
+            color: #28a745;
+        }
+        
+        .feedback.incorreto {
+            color: #dc3545;
+        }
+        
+        .explicacao {
+            margin-top: 10px;
+            font-style: italic;
+        }
+    </style>
 </head>
 <body>
     <header class="navbar">
-        
-            <img src="/img/Logo.png" class="navbar-brand"> 
-            <div>  
-                <button class="navbar-button"><a href="/sobre">Sobre</a></button>
-                <button class="navbar-button"><a href="/">Home</a></button>
-            </div>
+        <img src="/img/Logo.png" class="navbar-brand"> 
+        <div>  
+            <button class="navbar-button"><a href="/sobre">Sobre</a></button>
+            <button class="navbar-button"><a href="/">Home</a></button>
+        </div>
     </header>
 
-   <div class="conteiner">
-      <div class="esquerda">
+    <div class="conteiner">
+        <div class="esquerda">
+            <!-- Código dos anos (mantido igual) -->
             <div id="sexto">
                 <h2>6° ano</h2>
                 <ul>
@@ -76,12 +136,15 @@
                     <%} else {%>
                         <li>Nenhuma materia diponivel</li>
                     <%}%>
+                </ul>
             </div>
         </div>
+        
         <div class="questao">
         <% if (materiaAtual && exercicios) { %>
           <h1>Exercícios: <%= materiaAtual.nome %></h1>
           
+          <form id="form-exercicios" method="POST" action="/verificar-respostas">
           <% exercicios.perguntas.forEach((exercicio, index) => { %>
             <div class="exercicio-card">
               <h3>Exercício <%= index + 1 %></h3>
@@ -97,7 +160,7 @@
                 <% } %>
               </div>
 
-              <!-- Opções (se existirem) -->
+              <!-- Opções (se existirem) - questões de múltipla escolha -->
               <% if (exercicio.opcoes) { %>
                 <div class="opcoes">
                   <% exercicio.opcoes.forEach(opcao => { %>
@@ -106,31 +169,125 @@
                         type="radio" 
                         name="ex<%= index %>" 
                         id="ex<%= index %>-<%= opcao.split(')')[0] %>"
+                        value="<%= opcao.split(')')[0] %>"
+                        required
                       >
                       <label for="ex<%= index %>-<%= opcao.split(')')[0] %>">
                         <%= opcao %></label>
                     </div>
                   <% }); %>
                 </div>
+              <% } else { %>
+                <!-- Campo de resposta para questões abertas -->
+                <div class="campo-resposta-container">
+                  <input 
+                    type="text" 
+                    class="campo-resposta"
+                    name="ex<%= index %>" 
+                    placeholder="Digite sua resposta"
+                    required
+                  >
+                </div>
               <% } %>
 
-              <!-- Botão para ver resposta -->
-              <button class="btn-ver-resposta" data-target="resposta-<%= index %>">
+              <!-- Botão para ver resposta (só aparece após responder) -->
+              <button type="button" class="btn-ver-resposta" data-target="resposta-<%= index %>" style="display: none;">
                 Ver Resposta
               </button>
 
               <!-- Resposta (oculta inicialmente) -->
               <div class="resposta" id="resposta-<%= index %>">
                 <p><strong>Resposta correta:</strong> <%= exercicio.resposta %></p>
-                <p class="explicacao"><%= exercicio.explicacao %></p>
+                <% if (exercicio.explicacao) { %>
+                  <p class="explicacao"><%= exercicio.explicacao %></p>
+                <% } %>
               </div>
+              
+              <!-- Feedback (será preenchido via JavaScript) -->
+              <div class="feedback" id="feedback-<%= index %>"></div>
             </div>
           <% }); %>
+          
         <% } else { %>
           <p>Nenhum exercício disponível para este tema.</p>
         <% } %>
+        </div>
     </div>
-   
 
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const form = document.getElementById('form-exercicios');
+            const botoesVerResposta = document.querySelectorAll('.btn-ver-resposta');
+            
+            // Mostrar botão de ver resposta quando uma opção for selecionada
+            const inputs = document.querySelectorAll('input[type="radio"], input[type="text"]');
+            inputs.forEach(input => {
+                input.addEventListener('change', function() {
+                    const card = this.closest('.exercicio-card');
+                    const botao = card.querySelector('.btn-ver-resposta');
+                    botao.style.display = 'block';
+                });
+            });
+            
+            // Manipular clique no botão de ver resposta
+            botoesVerResposta.forEach(botao => {
+                botao.addEventListener('click', function() {
+                    const targetId = this.getAttribute('data-target');
+                    const resposta = document.getElementById(targetId);
+                    
+                    if (resposta.style.display === 'block') {
+                        resposta.style.display = 'none';
+                        this.textContent = 'Ver Resposta';
+                    } else {
+                        resposta.style.display = 'block';
+                        this.textContent = 'Ocultar Resposta';
+                    }
+                });
+            });
+
+            document.addEventListener('DOMContentLoaded', function() {
+        const form = document.getElementById('form-exercicios');
+        const botoesVerResposta = document.querySelectorAll('.btn-ver-resposta');
+        
+        // Mostrar botão de ver resposta quando uma opção for selecionada
+        const inputs = document.querySelectorAll('input[type="radio"], input[type="text"]');
+        inputs.forEach(input => {
+            input.addEventListener('change', function() {
+                const card = this.closest('.exercicio-card');
+                const botao = card.querySelector('.btn-ver-resposta');
+                botao.style.display = 'block';
+            });
+        });
+        
+        // Manipular clique no botão de ver resposta
+        botoesVerResposta.forEach(botao => {
+            botao.addEventListener('click', function() {
+                const targetId = this.getAttribute('data-target');
+                const resposta = document.getElementById(targetId);
+                
+                if (resposta.style.display === 'block') {
+                    resposta.style.display = 'none';
+                    this.textContent = 'Ver Resposta';
+                } else {
+                    resposta.style.display = 'block';
+                    this.textContent = 'Ocultar Resposta';
+                }
+            });
+        });
+        
+        // REMOVI o event listener do "Enter" que estava causando problemas
+        // O formulário será enviado normalmente pelo botão submit
+    });
+            
+            // Validar formulário antes do envio
+            form.addEventListener('submit', function(e) {
+                e.preventDefault();
+                
+                // Aqui você pode adicionar validação adicional se necessário
+                // e então enviar o formulário para o servidor
+                this.submit();
+            });
+        });
+    </script>
 </body>
 </html>

@@ -80,9 +80,9 @@
             "2. Depois dezenas, centenas...",
             "3. Caso especial (empréstimo):",
             "   - 320 - 241:",
-            "     • 0 < 1 → pegamos 1 dezena (2→1)",
-            "     • 10 - 1 = 9",
-            "     • 1 - 4 → pegamos 1 centena (3→2)",
+            "     • 0 < 1 → como não tem como tirar 0 de 1, pegamos 1 da dezena (2→1) assim o 0 vira 10, deixando continuar a conta",
+            "     • 10 - 1 = 9. fim das unidades ",
+            "     • 1 - 4 → pegamos 1 centena (3→2) assim o 1 vira 11 e continuamos",
             "     • 11 - 4 = 7",
             "     • 2 - 2 = 0",
             "     • Resultado: 79"
@@ -105,17 +105,18 @@
       "introducao":[
         "Ideia de Multiplicação:", "A multiplicação é uma forma que podemos usar para simplificar quando precisamos somar o mesmo numero varias vezes. Ex: Em um pacotinho de cartas vem 6 cartas, João comprou 4 Pacotinhos, quantas cartas João comprou ?",
         "Podemos resolver isso  de suas formas", "1) 6+6+6+6 = 24", "2) 6x4 = 24","Viu como a multiplicação fica mais “fácil” e menor, e chegamos no mesmo resultado que somar varias vezes o mesmo numero.",
-        "Vamos pegar outro exemplo. Cada partida que Nicolas joga  ele ganha 12 pontos, quantos pontos ele vai ganhar se jogar 6 partidas ?",
         "Vamos pegar outro exemplo. Cada partida que NIcolas joga ele ganha 12 pontos quantos pontos ele ganhar se jogar 6 partidas?",
         "12 X 6 = ?", "Podemos decompor em dois essa multiplicação para ficar mais facil: 10X6 e 2X6, estudando mais sobre a tabuada e sabendo a tabuada do seis sabemos que",
-        "2X6 = 12", "10X6 = 60","Agora podemos somar esses dois resultados e saberemos a resposta, 60+12 = 72. Ao final Nicolas terá 72 pontos.",
-        
-        "Ideia de Divisão","Se a multiplicação é somar varias vezes o mesmo numero, a divisão podemos dizer que é subtrair varias vezes também, o resultado dessa conta é quantas vezes o divisor cabe dentro do dividendo.",
+        "2X6 = 12", "10X6 = 60","Agora podemos somar esses dois resultados e saberemos a resposta, 60+12 = 72. Ao final Nicolas terá 72 pontos."
+      ],
+        "subtopicos":[{
+         "titulo": "Ideia de Divisão",
+         "conteudo":[ "Se a multiplicação é somar varias vezes o mesmo numero, a divisão podemos dizer que é subtrair varias vezes também, o resultado dessa conta é quantas vezes o divisor cabe dentro do dividendo.",
         "Vamos pensar assim. Matheus tem 25 bombons para dividir com ele e mais 3 amigos, com quantos bombons cada garoto vai ficar ?", "Montando a conta fica assim : (dividendo) 25/4 (Divisor)",
         "Para resolver vamos pensar assim, quantas vezes o numero 4 cabe dentro de 25?Usando a tabuada do 4 descobrimos que 4x6= 24, e é o menor numero e o mais próximo dentro da tabela do 4, então vamos usa-lo.",
         "24/4 = 6(cociente)", "Então 25/4= 6 e sobra 1 qua chamamos de resto. Esse é o fin  da conta  dividindo os bombons que Matheus tem fica 6 para cada e sobra 1."
-      ],
-        "subtopicos":[{
+        ]
+        },{
           "titulo": "Expressões Numéricas",
           "conteudo":[
           "Chamamos de Expressão Numérica a junção de mais operações em uma conta, por exemplo : 3+4X6.","Para resolver isso temos algumas regrinhas:","-Multiplicações e Divisões primerio na ordem que aparecerem (da esqueda para direita).",
@@ -206,6 +207,9 @@
           ]
         }
       ]
+    },
+    {
+      
     }
   ]
 }
