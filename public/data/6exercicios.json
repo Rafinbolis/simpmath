@@ -99,7 +99,7 @@
                     
                 },
                 {
-                    "enunciado":"Quantos numeros são divisiveis por {num1}?",
+                    "enunciado":"Quantos numeros são divisores por {num1}?",
                     "resposta":"Existem {quantidadeDivisores} divisores de {num1}: {listaDivisores}.",
                     "quantidade_numeros": 2,
                     "maximo": 50,
@@ -117,7 +117,7 @@
             "perguntas":[
                 {
                     "enunciado": "Encontre o MMc de {num1} e {num2}",
-                    "resposta":"Os Menor Multiplo Comum entre {num1} e {num2} é {mmc}  ",
+                    "resposta":"O Menor Múltiplo Comum entre {num1} e {num2} é {mmc}  ",
                     "quantidade_numeros": 2,
                     "maximo":10,
                     "minimo":2,
@@ -127,7 +127,7 @@
                 },
                 {
                    "enunciado": "Encontre o MMC de {num1} e {num2}",
-                   "resposta":"Os Menor Multiplo Comum entre {num1} e {num2} é {mmc} ",
+                   "resposta":"O Menor Múltiplo Comum entre {num1} e {num2} é {mmc} ",
                    "quantidade_numeros": 2,
                    "maximo":16,
                    "minimo":2,
