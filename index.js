@@ -8,7 +8,7 @@ const port = 8080;
 // Carrega os dados do de todos os anos ano
 
 const materia6 = require('./public/data/6materia.json');
-const materia7 = require('./public/data/7.json');
+const materia7 = require('./public/data/7materia.json');
 const materia8 = require('./public/data/8.json');
 const materia9 = require('./public/data/9.json');
 
