@@ -209,7 +209,38 @@
       ]
     },
     {
-      
+      "id":6,
+      "nome": "Minimo Multiplo Comum (MMC)",
+      "introducao":[
+        "O MMC é o menor número natural (diferente de zero) que é múltiplo comum de dois ou mais números.Em outras palavras, é o menor número que pode ser dividido exatamente por todos eles.",
+        "Para que serve?",
+        "     • Resolver problemas com frações (quando precisamos de denominadores iguais).",
+        "     • Organizar situações de tempo ou quantidades repetitivas (exemplo: eventos que se repetem em dias diferentes).","Exixtem dois métodos principais:"
+      ],
+      "subtopicos":[
+        {
+          "titulo":"1. Pelos múltiplos:",
+          "conteudo":[
+            "   • Escrevemos alguns multiplos de cada numero.",
+            "   • O primeiro múltiplo que aparecer em comum é o MMC. ",
+            "   • Exemplo:",
+            "      -- Múltiplos de 4: 4, 8, 12, 16, 20..",
+            "      -- Múltiplos de 6: 6, 12, 18, 24...",
+            "      -- MMC(4, 6) = 12"  
+          ]
+        },
+        {
+          "titulo":"2. Pela decomposição de fatores primos:",
+          "conteudo":[
+            "   • Decompomos os numeros em fatores primos",
+            "   • Pegamos todos os fatores primos que aparecem com os maiores expoentes.",
+            "   • Exemplo:",
+            "-- 12= 2² x 3",
+            "-- 18 = 2 x 3²",
+            "-- MMC(12,18) = 2² x 3² = 36"
+          ]
+        }
+      ]
     }
   ]
 }

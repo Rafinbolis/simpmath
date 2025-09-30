@@ -221,15 +221,16 @@ function processarExerciciosComNumeros(exercicios) {
   exerciciosProcessados.perguntas.forEach((pergunta, perguntaIndex) => {
     console.log(`\nProcessando pergunta ${perguntaIndex + 1}`);
     
-    // Gera números específicos para cada pergunta
+    // DEFINE QUANTIDADE DE NÚMEROS - ADICIONE ESTA LINHA
+    const qtd = pergunta.quantidade_numeros || 2;
+    
     const parametros = {
-      qtd: 2,
+      qtd: qtd, // USA A QUANTIDADE DO JSON OU PADRÃO 2
       min: pergunta.minimo || 1,
       max: pergunta.maximo || 12
     };
     
-    // CONFIGURAÇÕES - USE APENAS ESTA DECLARAÇÃO
-    const config = pergunta.config || {}; // Pega config do JSON ou objeto vazio
+    const config = pergunta.config || {};
     
     // Detecta automaticamente o tipo de operação
     const textoCompleto = JSON.stringify(pergunta).toLowerCase();
@@ -249,36 +250,72 @@ function processarExerciciosComNumeros(exercicios) {
         textoCompleto.includes('pedaços'))) {
       config.num1Maior = true;
       
-      // Para divisão exata, podemos forçar que num1 seja divisível por num2
       if (textoCompleto.includes('pedaços') && textoCompleto.includes('pessoas')) {
         config.divisivelPor = 'num2';
       }
     }
     
-    console.log(`Parâmetros: min=${parametros.min}, max=${parametros.max}, config=`, config);
+    console.log(`Parâmetros: qtd=${parametros.qtd}, min=${parametros.min}, max=${parametros.max}, config=`, config);
     
     const valores = gerarNumero(parametros.qtd, parametros.min, parametros.max, config);
     const numeros = {};
     
-    // Cria objeto com nomes de variáveis (num1, num2, etc.)
+    // Cria objeto com nomes de variáveis (num1, num2, num3, etc.)
     for (let i = 0; i < valores.length; i++) {
       numeros[`num${i + 1}`] = valores[i];
     }
-    
-    console.log(`Números gerados:`, numeros);
-    
-    // Adiciona variáveis para operações comuns
-    numeros.soma = valores.reduce((a, b) => a + b, 0);
-    numeros.diferenca = Math.abs(valores[0] - valores[1]);
-    numeros.produto = valores.reduce((a, b) => a * b, 1);
-    
-    // Para divisão, adiciona resultado exato
-    if (config.num1Maior) {
-      numeros.divisao = valores[0] / valores[1];
-      numeros.divisaoExata = (valores[0] % valores[1] === 0);
+
+    // CÁLCULOS ESPECIAIS PARA MÚLTIPLOS NÚMEROS
+    if (pergunta.config && pergunta.config.calcularDivisores) {
+      const num = numeros.num1;
+      const divisores = [];
+      
+      for (let i = 1; i <= num; i++) {
+        if (num % i === 0) divisores.push(i);
+      }
+      
+      numeros.quantidadeDivisores = divisores.length;
+      numeros.listaDivisores = divisores.join(', ');
     }
     
-    console.log(`Números completos:`, numeros);
+    // CÁLCULO DE MMC PARA MÚLTIPLOS NÚMEROS
+    if (valores.length >= 2) {
+      const { mmc: calcularMMC } = require('./utils/numeros');
+      let resultadoMMC = valores[0];
+      
+      for (let i = 1; i < valores.length; i++) {
+        resultadoMMC = calcularMMC(resultadoMMC, valores[i]);
+      }
+      
+      numeros.mmc = resultadoMMC;
+    }
+    
+    // CÁLCULO DE MDC PARA MÚLTIPLOS NÚMEROS
+    if (valores.length >= 2 && textoCompleto.includes('mdc')) {
+      const { mdc: calcularMDC } = require('./utils/numeros');
+      let resultadoMDC = valores[0];
+      
+      for (let i = 1; i < valores.length; i++) {
+        resultadoMDC = calcularMDC(resultadoMDC, valores[i]);
+      }
+      
+      numeros.mdc = resultadoMDC;
+    }
+    
+    // OPERAÇÕES MATEMÁTICAS BÁSICAS
+    numeros.soma = valores.reduce((a, b) => a + b, 0);
+    numeros.produto = valores.reduce((a, b) => a * b, 1);
+    
+    // Para 2 números mantém diferença
+    if (valores.length === 2) {
+      numeros.diferenca = Math.abs(valores[0] - valores[1]);
+      if (config.num1Maior) {
+        numeros.divisao = valores[0] / valores[1];
+        numeros.divisaoExata = (valores[0] % valores[1] === 0);
+      }
+    }
+    
+    console.log(`Números gerados:`, numeros);
     
     // Processa todos os textos
     if (Array.isArray(pergunta.enunciado)) {
