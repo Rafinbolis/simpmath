@@ -2,7 +2,31 @@
     "materias":[
         {
             "id":1,
-            "nome":"Números racionais"
+            "nome":"Sequencia dos Números racionais",
+            "introducao":["A sequencia de números que usamos no dia a dia, 0, 1, 2, 3, 4, 5, ..., ela faz parte do que chamamos de conjunto dos Números Naturais. Essa sequencia é infinita, pois todo numero tem um sucessor. "],
+            "subtopicos":[
+                {
+                    "titulo":"",
+                    "conteudo":[
+                        "Sucessor é sempre o que esta depois de uma sequencia, por exemplo, o numero 6 é sucessor do número 5, e assim em diante. Seguindo essa logica temos também os antecessores.",
+                        "Antecessores são os temos que vem antes, por exemplo, o número 9 é antecessor do número 10, assim podemos formar uma sequencia de números consecutivos dentro do conjunto dos números naturais, 7, 8, 9 e 10 são números consecutivos, 27, 28, 29 também é uma sequencia de consecutivos."
+                    ]
+                    
+                },
+                {
+                    "titulo":"Régua numérica",
+                    "imagem": {
+                            "src": "/img/regua_numerica.png",
+                            "width": 1800,
+                            "height": 400,
+                            "alt": "Régua numérica de 1 a 16"
+                        }, 
+                    "conteudo":[
+                        "Podemos colocar uma serie de números em uma reta para que possamos analisar qual numero é maior que o outro.",
+                        "Os números que estão a direita são maiores que o da esquerda, EX:","5>3 (lemos, cinco é maior que três);"," 2<6 (dois é menor que seis);"," 7 = 7 (sete é igual a sete )"
+                    ]
+                }
+            ]
         }
     ]
 }

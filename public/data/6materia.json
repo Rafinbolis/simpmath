@@ -197,7 +197,12 @@
             "O gráfico de barrasa baixo mostra as vendas da primeira semana de cada mês de uma loja que vende eletrodomésticos para casa, onde o amarelo representa o Fogão, verde escuro representa a Televisão, verde claro é o Celular, e o azul representa as vendas do Liquidificador. ",
             "Podemos ver que cada barra representa um produto que a loja vende, o eixo de baixo representa os meses, já o eixo vertical mostra a quantidade de venda de cada produto por mês, agora que sabemos o que cada parte do gráfico representa, podemos fazer a analise de qual produto vendeu mais e quais venderam menos."
             ],
-          "imagem":"/img/grafico.png"
+          "imagem":{
+            "src":"/img/grafico.png",
+            "width": 600,
+            "height": 200,
+            "alt": "Info grafico"
+          }
           
         },
         {
@@ -235,8 +240,8 @@
             "   • Decompomos os numeros em fatores primos",
             "   • Pegamos todos os fatores primos que aparecem com os maiores expoentes.",
             "   • Exemplo:",
-            "-- 12= 2² x 3",
-            "-- 18 = 2 x 3²",
+            "-- 12= 2 x 2 x 3 = 2² x 3",
+            "-- 18 = 2 x 3 x 3 = 2 x 3²",
             "-- MMC(12,18) = 2² x 3² = 36"
           ]
         }

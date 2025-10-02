@@ -12,7 +12,6 @@
 </head>
 <body>
     <header class="navbar">
-        
             <img src="/img/Logo.png" class="navbar-brand"> 
             <div>  
                 <button class="navbar-button"><a href="/sobre">Sobre</a></button>
@@ -109,12 +108,22 @@
                                        
                                 <% }) %>
                                  <% if (subtopico.imagem) { %>
-                                        <div class="subtopico-imagem">
-                                            <img src="<%= subtopico.imagem %>" 
-                                                alt="Exemplo: <%= subtopico.titulo %>" class="">
-                                        </div>
-
+                                    <div class="subtopico-imagem" 
+                                        <% if (typeof subtopico.imagem !== 'string') { %>
+                                        style="width: <%= subtopico.imagem.width %>px; height: <%= subtopico.imagem.height %>px;"
                                         <% } %>
+                                    >
+                                        <% if (typeof subtopico.imagem === 'string') { %>
+                                        <img src="<%= subtopico.imagem %>" alt="Imagem da matéria">
+                                        <% } else { %>
+                                        <img src="<%= subtopico.imagem.src %>" 
+                                            alt="<%= subtopico.imagem.alt || 'Imagem da matéria' %>"
+                                            width="<%= subtopico.imagem.width %>"
+                                            height="<%= subtopico.imagem.height %>"
+                                            class="imagem-json">
+                                        <% } %>
+                                    </div>
+                                    <% } %>
 
                             </div>
 
