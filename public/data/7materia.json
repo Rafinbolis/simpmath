@@ -17,13 +17,40 @@
                     "titulo":"Régua numérica",
                     "imagem": {
                             "src": "/img/regua_numerica.png",
-                            "width": 1800,
-                            "height": 400,
+                            "width" : 700,
                             "alt": "Régua numérica de 1 a 16"
                         }, 
                     "conteudo":[
                         "Podemos colocar uma serie de números em uma reta para que possamos analisar qual numero é maior que o outro.",
                         "Os números que estão a direita são maiores que o da esquerda, EX:","5>3 (lemos, cinco é maior que três);"," 2<6 (dois é menor que seis);"," 7 = 7 (sete é igual a sete )"
+                    ]
+                }
+            ]
+        },
+        {
+            "id":2,
+            "nome": "Frações e Números Decimais",
+            "introducao":["As frações são usadas para representar partes de um todo. Elas também podem indicar divisões entre números. Por exemplo, dividir 2 barras de chocolate entre 5 crianças resulta em {fracao:2/5} de barra para cada uma. Isso mostra que o traço da fração também pode representar uma divisão."],
+            "subtopicos":[
+                {
+                    "titulo":"Frações e números decimais",
+                    "conteudo":[
+                        "Toda fração pode ser escrita na forma decimal, realizando a divisão entre o numerador e o denominador:",
+                        "{fracao:1/4} = 0,25;", "{fracao:3/2} = 1,5;", "{fracao:5/9} = 0,555.. (é uma disima periodica)"
+                    ]
+                },
+                {
+                    "titulo":"Frações equivalentes",
+                    "conteudo":[
+                        "Duas frações são equivalentes quando representamos a mesma quantidade como {fracao:1/2} = {fracao:2/4}. Para obter frações equivalentes, basta multiplicar ou dividir o numerador e o denominador  pelo mesmo numero, diferente de zero.",
+                        "Essas equivalências também ajudam a conventer frações em números decimais de forma mais fácil."
+                    ]
+                },
+                {
+                    "titulo":"Frações na reta numerica ",
+                    "conteudo":[
+                        "Na reta numerica, tanto as frações quanto os números decimais podem ser localizados. Por exemplo, {fracao:1/2}= 0,5, está localizado entre o 0 e 1.",
+                        "Qunato mais dividimos a unidade (em decimos, centecimos, milesimos, etc), mais precisas ficam as representações. "
                     ]
                 }
             ]

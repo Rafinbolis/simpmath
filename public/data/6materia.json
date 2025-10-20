@@ -110,8 +110,8 @@
         "2X6 = 12", "10X6 = 60","Agora podemos somar esses dois resultados e saberemos a resposta, 60+12 = 72. Ao final Nicolas terá 72 pontos."
       ],
         "subtopicos":[{
-         "titulo": "Ideia de Divisão",
-         "conteudo":[ "Se a multiplicação é somar varias vezes o mesmo numero, a divisão podemos dizer que é subtrair varias vezes também, o resultado dessa conta é quantas vezes o divisor cabe dentro do dividendo.",
+        "titulo": "Ideia de Divisão",
+        "conteudo":[ "Se a multiplicação é somar varias vezes o mesmo numero, a divisão podemos dizer que é subtrair varias vezes também, o resultado dessa conta é quantas vezes o divisor cabe dentro do dividendo.",
         "Vamos pensar assim. Matheus tem 25 bombons para dividir com ele e mais 3 amigos, com quantos bombons cada garoto vai ficar ?", "Montando a conta fica assim : (dividendo) 25/4 (Divisor)",
         "Para resolver vamos pensar assim, quantas vezes o numero 4 cabe dentro de 25?Usando a tabuada do 4 descobrimos que 4x6= 24, e é o menor numero e o mais próximo dentro da tabela do 4, então vamos usa-lo.",
         "24/4 = 6(cociente)", "Então 25/4= 6 e sobra 1 qua chamamos de resto. Esse é o fin  da conta  dividindo os bombons que Matheus tem fica 6 para cada e sobra 1."

@@ -9,6 +9,27 @@
     <link rel="stylesheet" href="/css/materias.css">
     <link rel="icon" href="/img/LogoTipo.png" type="image/png">
     
+    
+    <script>
+    window.MathJax = {
+        tex: {
+            inlineMath: [['$', '$'], ['\\(', '\\)']],
+            displayMath: [['$$', '$$'], ['\\[', '\\]']]
+        },
+        svg: {
+            fontCache: 'global'
+        },
+        startup: {
+            ready: ()=>{
+                console.log('configurado');
+                MathJax.startup.defaultReady()
+            }
+        }
+    };
+    </script>
+    <script type="text/javascript" id="MathJax-script" async
+    src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js">
+    </script>
 </head>
 <body>
     <header class="navbar">
@@ -76,7 +97,6 @@
                     <%}%>
                 </ul>
             </details>
-
         </div>
         
         <div class="center">
@@ -86,28 +106,37 @@
                     <h1><%= materiaAtual.nome %></h1>
                     
                     <div class="introducao">
+                        <%
+                        // Define a função ANTES de usar
+                        function processarTextoComFracoes(texto) {
+                            const variaveis = {
+                                'fracao': (num, den) => `\\(\\frac{${num}}{${den}}\\)`,
+                                'raiz': (valor) => `\\(\\sqrt{${valor}}\\)`,
+                                'potencia': (base, expoente) => `\\(${base}^{${expoente}}\\)`,
+                                'integral': (a, b) => `\\(\\int_{${a}}^{${b}}\\)`
+                            }
+                            
+                            return texto.replace(/\{(\w+):([^}]+)\}/g, (match, tipo, parametros) => {
+                                if (variaveis[tipo]) {
+                                    const params = parametros.split('/');
+                                    return variaveis[tipo](...params);
+                                }
+                                return match;
+                            });
+                        }
+                        %>
                         <% materiaAtual.introducao.forEach(paragrafo => { %>
-                            <p><%= paragrafo %></p>
+                            <p><%- processarTextoComFracoes(paragrafo) %></p>
                         <% }) %>
                     </div>
-
                     <% materiaAtual.subtopicos.forEach((subtopico, index) => { %>
                         <div class="subtopico" id="subtopico-<%= index %>">
                             <h2><%= subtopico.titulo %></h2>
-
                             <div class="conteudo">
-
                                 <% subtopico.conteudo.forEach(item => { %>
-                                    <% if(item.includes('=')) { %>
-                                        <p><span class="operacao-matematica"><%= item %></span></p>
-
-                                    <% } else { %>                                       
-                                        <p><%= item %></p>
-                                        
-                                    <% } %>
-                                       
+                                        <p><%- processarTextoComFracoes(item)%></p>
                                 <% }) %>
-                                 <% if (subtopico.imagem) { %>
+                                <% if (subtopico.imagem) { %>
                                     <div class="subtopico-imagem" 
                                         <% if (typeof subtopico.imagem !== 'string') { %>
                                         style="width: <%= subtopico.imagem.width %>px; height: <%= subtopico.imagem.height %>px;"
@@ -124,9 +153,7 @@
                                         <% } %>
                                     </div>
                                     <% } %>
-
                             </div>
-
                             <% if(subtopico.numerais_romanos) { %>
                                 <div class="tabela-numerais">
                                     <h3>Valores Básicos:</h3>
@@ -167,7 +194,7 @@
             <% } %>
         </div>
 
-       <!-- Sumário modificado -->
+    <!-- Sumário modificado -->
         <div class="right">
     <h3>Sumário da Matéria</h3>
     <ul class="sumario">
@@ -198,5 +225,22 @@
             </ul>
         </div>
     </div>
+    
+    <script>
+document.addEventListener('DOMContentLoaded', function() {
+    if (window.MathJax) {
+        // Aguarda um pouco para garantir que tudo foi renderizado
+        setTimeout(() => {
+            MathJax.typesetPromise().then(() => {
+                console.log('✅ MathJax carregado com sucesso!');
+            }).catch((err) => {
+                console.error('❌ Erro MathJax:', err);
+            });
+        }, 500);
+    } else {
+        console.error('❌ MathJax não foi carregado');
+    }
+});
+</script>
 </body>
 </html>

@@ -101,10 +101,6 @@ li:hover {
 }
 
 .subtopico-imagem img {
-  /* Remove max-width: 100% que sobrescreve as dimensões */
-  border-radius: 8px;
-  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-  /* Mantém as dimensões do JSON */
   object-fit: contain; /* Garante que a imagem não distorça */
 }
 
@@ -114,7 +110,6 @@ li:hover {
   height: auto;
 }
 
-/* Adicione ao CSS */
 .imagem-json {
   max-width: none !important;
   width: auto !important;
@@ -131,3 +126,5 @@ li:hover {
 .subtopico-imagem.imagem-dimensionada {
   display: inline-block; /* Para respeitar width/height */
 }
+
+ 
