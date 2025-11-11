@@ -54,6 +54,34 @@
                     ]
                 }
             ]
+        },
+        {
+            "id": 3,
+            "nome": "Números Inteiros",
+            "introducao":["Os números inteiros incluem todos os números positivos, negativos e o zero. Eles são usados para representar situações do dia a dia em que há ganhos, perdas, subidas ou descidas.","Exemplos:","Temperaturas abaixo de zero (–5 °C)","Andares de um prédio (–2 é o segundo subsolo)","Saldo bancário (–100 reais indica dívida)",
+        "Na reta numérica, os números negativos ficam à esquerda do zero e os positivos à direita. Quanto mais à direita, maior é o número."],
+            "subtopicos":[
+                {
+                    "titulo":"Sinais",
+                    "conteudo":[
+                        "O sinal + significa que um numero é positivo, como o lucro de uma impresa, já o simbolo - representa que o numero é negativo, perda ou prejuízo",
+                        "As regras para lidar quando se encontra os dois são as seguintes:","+ com + = + (positivo) ;", "- com - = + (positivo)", "+ com - = - (negativo)", "- com + = - (negativo)"
+                    ]
+                },
+                {
+                    "titulo":"Adição e Subtração de Números Inteiros",
+                    "conteudo":[
+                        "Mesmos sinais: soma os números e mantém o sinal. Exemplo: (–3) + (–5) = –8", "Sinais diferentes: subtrai o menor do maior e usa o sinal do número com maior valor absoluto. Exemplo 1: (+8) + (–5) = +3; Exemplo 2: (–9) + (+4) = –5",
+                        "Essas operações também se aplicam a situações reais, como variações de temperatura ou mudanças em saldos e pontuações."
+                    ]
+                },
+                {
+                    "titulo":"Valor Absoluto",
+                    "conteudo":[
+                        "O valor absoluto (ou módulo) de um número indica sua distância até o zero. ","Exemplo: | –7| = 7."
+                    ]
+                }
+            ]
         }
     ]
 }
