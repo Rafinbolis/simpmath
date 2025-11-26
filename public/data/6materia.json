@@ -4,15 +4,15 @@
       "id": 1,
       "nome": "Sistemas de Numeração Decimal",
       "introducao": [
-        "A Matemática nem sempre teve a forma que vemos hoje, ela foi fruto do passar do tempo, e bota tempo nisso. O uso da matemática pelas pessoas comum pode ter começado pela necessidade de fazer o gerenciamento das plantações, animais e  itens de suas posses. ",
+        "A Matemática nem sempre teve a forma que vemos hoje, ela foi fruto do passar do tempo, e bota tempo nisso. O uso da Matemática pelas pessoas comuns começou pela necessidade de fazer o gerenciamento das plantações, animais e  itens de suas posses. ",
         "Para chegarmos no resultado que vemos hoje em dia tivemos vários grupos e povos que  contribuíram para a formação dos nossos números e numerais."
       ],
       "subtopicos": [
         {
           "titulo": "Numerais",
           "conteudo": [
-            "Os numerais são as formas de representar um numero, ela pode ser gráfica, oral, símbolo ou um sinal.",
-            "Com a criação de um sistema para contar animais, plantas e outros objeto, veio a necessidade de agrupar esses números assim podendo contar mais objetos de uma forma mais eficiente, podemos ver isso nos números romandos por exemplo :"
+            "Os numerais são as formas de representar um número, ela pode ser gráfica, oral, símbolo ou um sinal.",
+            "Com a criação de um sistema para contar animais, plantas e outros objeto, veio a necessidade de agrupar esses números assim podendo contar mais objetos de uma forma mais eficiente","Um exemplo de sistema de contagem (numeração) é o sistema Romano, no qual algumas quantidades eram representadas por letras maiúsculas do alfabeto: "
           ],
           "numerais_romanos": {
             "basicos": {
@@ -31,19 +31,19 @@
         {
           "titulo":"",
           "conteudo":[
-              "As quantidades de 1 a 9 têm símbolos diferentes para representá-las.", "O sistema é decimal ou seja agrupamos de 10 em 10", "O numero zero representa a ausência de unidades, dezenas centenas assim por diante.",
-              "O valor de cada algarismo vai variar de acordo de suas posições na escrita do numero, unidade, dezena, centena, unidade de milhar, dezena de milhar, centena de milhar e assim por diante milhão, bilhão, trilhão...",
-              "Sem um símbolo para indicar a ausência de agrupamentos em determinada posição, fica difícil diferenciar registros feitos com os mesmos algarismos, como: 23, 203, 2003, 230 etc."
+              "As quantidades de 1 a 9 têm símbolos diferentes para representá-las.", "O sistema é decimal ou seja agrupamos de 10 em 10", "O número zero representa a ausência de unidades, dezenas centenas assim por diante.",
+              "O valor de cada algarismo vai variar de acordo de suas posições na escrita do número, unidade, dezena, centena, unidade de milhar, dezena de milhar, centena de milhar e assim por diante milhão, bilhão, trilhão...",
+              "Uma das dificuldades apresentada por esse sistema é que sem um símbolo para indicar a ausência de agrupamentos em determinada posição, fica difícil diferenciar registros feitos com os mesmos algarismos, como: 23, 203, 2003, 230 etc."
             ]
         },
                 
         {
           "titulo": "Números Naturais",
           "conteudo": [
-            "Os números que usamos para conta são principalmente 0, 1, 2, 3, 4, 5, 6, 7, 8, 9.",
-            "Podemos continuar a contar somente adicionando uma unidade ao ultimo numero para criar o seu sucessor, 9+1 = 10, 10+1=11, 11+1=12 ... 99+1=100.",
-            "Do mesmo jeito que fizemos para descobrir o sucessor de um numero podemos descobrir o numero antecessor, 9-1= 8, 8-1=7... 99-1=98.",
-            "Também tem os números consecutivos, ou os números em sequencia, os números 7, 8, 9 são números consecutivos, 15, 16 e 17 também são consecutivos.",
+            "São formados pelos números de contagem: 0, 1, 2, 3, 4, 5, 6, 7, 8, 9.",
+            "A contagem é feita adicionando uma unidade a partir do primeiro número contado, encontrando assim o seu sucessor (o número que vem imediatamente após). Exemplo: 9+1 = 10, 10+1=11, 11+1=12 ... 99+1=100.",
+            "Quando, ao invés de adicionar, subtrairmos uma unidade de um número, obtemos o seu antecessor (o número que vem imediatamente antes). Exemplo: 9-1= 8, 8-1=7... 99-1=98.",
+            "Um número e seu sucessor são chamados de números consecutivos. Por exemplo, 10 e 11.   ",
             "Podemos ver outros tipos de sequencias de números naturais como:",
             "Pares: 0,2,4,6,8,10,12,14...",
             "Ímpares: 1,3,5,7,9,11,13,15,17..."
@@ -55,8 +55,8 @@
       "id": 2,
       "nome": "Adição e Subtração de números naturais",
       "introducao": [
-        "Adição: É a ideia de juntar quantidades. Ex: 7 (parcela) + 6 (parcela) = 13 (soma)",
-        "Subtração: É a ideia de diferença. Ex: 12 (minuendo) – 8 (subtraendo) = 4 (resto)"
+        "Adição: Nos remete à ideia de somar, juntar, almentar. Ex: 7 (parcela) + 6 (parcela) = 13 (soma)",
+        "Subtração: Nos remete à ideia de diminuir, tirar, subtrair. Ex: 12 (minuendo) – 8 (subtraendo) = 4 (resto)"
       ],
       "subtopicos": [
         {
@@ -91,6 +91,7 @@
         {
           "titulo": "Operações inversas",
           "conteudo": [
+            "A adição e a subtração são operações inversas, Exemplo:",
             "Problema: Caixa com 42 jujubas (vermelhas + verdes)",
             "Se vermelhas = 26:",
             "Verdes = 42 - 26 = 16",
@@ -101,25 +102,25 @@
     },
     {
       "id": 3,
-      "nome": "Multiplicação e Divisão de um Numero Natural",
+      "nome": "Multiplicação e Divisão de um Número Natural",
       "introducao":[
-        "Ideia de Multiplicação:", "A multiplicação é uma forma que podemos usar para simplificar quando precisamos somar o mesmo numero varias vezes. Ex: Em um pacotinho de cartas vem 6 cartas, João comprou 4 Pacotinhos, quantas cartas João comprou ?",
-        "Podemos resolver isso  de suas formas", "1) 6+6+6+6 = 24", "2) 6x4 = 24","Viu como a multiplicação fica mais “fácil” e menor, e chegamos no mesmo resultado que somar varias vezes o mesmo numero.",
+        "Ideia de Multiplicação:", "A multiplicação é uma forma que podemos usar para simplificar quando precisamos somar o mesmo número varias vezes. Ex: Em um pacotinho de cartas vem 6 cartas, João comprou 4 Pacotinhos, quantas cartas João comprou ?",
+        "Podemos resolver isso  de suas formas", "1) 6+6+6+6 = 24", "2) 6x4 = 24","Viu como a multiplicação fica mais “fácil” e menor, e chegamos no mesmo resultado que somar varias vezes o mesmo número.",
         "Vamos pegar outro exemplo. Cada partida que NIcolas joga ele ganha 12 pontos quantos pontos ele ganhar se jogar 6 partidas?",
         "12 X 6 = ?", "Podemos decompor em dois essa multiplicação para ficar mais facil: 10X6 e 2X6, estudando mais sobre a tabuada e sabendo a tabuada do seis sabemos que",
         "2X6 = 12", "10X6 = 60","Agora podemos somar esses dois resultados e saberemos a resposta, 60+12 = 72. Ao final Nicolas terá 72 pontos."
       ],
         "subtopicos":[{
         "titulo": "Ideia de Divisão",
-        "conteudo":[ "Se a multiplicação é somar varias vezes o mesmo numero, a divisão podemos dizer que é subtrair varias vezes também, o resultado dessa conta é quantas vezes o divisor cabe dentro do dividendo.",
+        "conteudo":[ "Se a multiplicação é somar varias vezes o mesmo número, a divisão podemos dizer que é subtrair varias vezes também, o resultado dessa conta é quantas vezes o divisor (o valor que ira diminuir o dividendo) cabe dentro do dividendo (o valor total queremos diminuir).",
         "Vamos pensar assim. Matheus tem 25 bombons para dividir com ele e mais 3 amigos, com quantos bombons cada garoto vai ficar ?", "Montando a conta fica assim : (dividendo) 25/4 (Divisor)",
-        "Para resolver vamos pensar assim, quantas vezes o numero 4 cabe dentro de 25?Usando a tabuada do 4 descobrimos que 4x6= 24, e é o menor numero e o mais próximo dentro da tabela do 4, então vamos usa-lo.",
+        "Para resolver vamos pensar assim, quantas vezes o número 4 cabe dentro de 25?Usando a tabuada do 4 descobrimos que 4x6= 24, e é o menor número e o mais próximo dentro da tabela do 4, então vamos usa-lo.",
         "24/4 = 6(cociente)", "Então 25/4= 6 e sobra 1 qua chamamos de resto. Esse é o fin  da conta  dividindo os bombons que Matheus tem fica 6 para cada e sobra 1."
         ]
         },{
           "titulo": "Expressões Numéricas",
           "conteudo":[
-          "Chamamos de Expressão Numérica a junção de mais operações em uma conta, por exemplo : 3+4X6.","Para resolver isso temos algumas regrinhas:","-Multiplicações e Divisões primerio na ordem que aparecerem (da esqueda para direita).",
+          "Chamamos de Expressão Numérica a junção de mais operações em uma expressão, por exemplo : 3+4X6.","Para resolver isso temos algumas regrinhas:","-Multiplicações e Divisões primerio na ordem que aparecerem (da esqueda para direita).",
           "-Adição e Subtração depois, na ordem que aparecerem. ","Vamos resover a quele exemplo de cima: 3+4X6= 3+24= 27","Caso apareça um parêntese () no meio da expressão, devemos resolver o que esta dentro dele primeiro, depois continuamos com o que estiver fora do parêntese.",
           "(7 x 2)- 6 +5= 14 – 6 + 5=8 + 5= 13"
           ]
@@ -127,20 +128,21 @@
         {
           "titulo": "Distributiva",
           "conteudo": [
-            "Se vamos multiplicar um numero resultado de uma soma (ou subtração) é a mesma coisa que a gente multiplicar os dois termos da soma ( ou subtração) e depois  efetuar a operação.",
+            "Se vamos multiplicar um número resultado de uma soma (ou subtração) é a mesma coisa que a gente multiplicar os dois termos da soma ( ou subtração) e depois  efetuar a operação.",
             "4 x (5+3)= 4 x 5 + 4 x 3= 20 + 12= 32"
           ]
         },
         {
           "titulo":"Potenciação e raiz Quadrada",
           "conteudo":[
-            "Podemos usar a potenciação para representar uma multiplicação que um numero aparece varias vezes. Por exemplo: 2⁴ = 2x2x2x2 = 16. O dois é a base, e o quatro é o expoente, e se lê dois elevado a quarta potencia.",
-            "Quando o expoente é 2 devemos ler elevado ao quadrado, e quando for elevado a 3 se lê elevado ao cubo.","De vez ou outra vc pode ver alguns numeros elevados a 0 ou a 1, e esses dois expoentes tem suas particularidades, por exemplo o 1 o resultado vai ser igual a base, e o 0 o resultado será igual 1."            
+            "Podemos usar a potenciação para representar uma multiplicação que um número aparece varias vezes. Por exemplo: 2⁴ = 2x2x2x2 = 16. O dois é a base, e o quatro é o expoente, e se lê dois elevado a quarta potencia.",
+            "Quando o expoente é 2 devemos ler elevado ao quadrado, e quando for elevado a 3 se lê elevado ao cubo.","De vez ou outra vc pode ver alguns números elevados a 0 ou a 1, e esses dois expoentes tem suas particularidades, por exemplo o 1 o resultado vai ser igual a base, e o 0 o resultado será igual 1.",           
+            "A potenciação e a radiciação tambem entram na ordem das operações das expressões numéricas."
           ]
         },
         {
           "titulo": "O que é Raiz Quadrada ?",
-          "conteudo":[ "A raiz quadrada serve quando queremos descobrir qual numero vezes ele mesmo é igual a nossa incógnita, por exemplo √49 = 7 (porque 7 × 7 = 49)"
+          "conteudo":[ "A raiz quadrada serve quando queremos descobrir qual número vezes ele mesmo é igual a nossa incógnita, por exemplo √49 = 7 (porque 7 × 7 = 49)"
           ]
         }
       ]
@@ -149,29 +151,29 @@
       "id": 4,
       "nome": "Múltiplos e Divisores",
       "introducao":[
-        "Os conceitos de múltiplos e divisores são conceitos que vão te ajudar a entender muitas coisas da qui para a frente na Matemática "
+        "Os conceitos de múltiplos e divisores são conceitos que vão te ajudar a entender muitas coisas daqui para a frente na Matemática "
       ],
       "subtopicos":[{
         "titulo":"Multiplos",
-        "conteudo":["Um numero múltiplo do outro é quando ele aparece dentro da tabuada um do outro, por exemplo, O 15 é múltiplo de 3 porque esta dentro da tabuada do três (3 x  5 = 15).",
+        "conteudo":["Um número múltiplo do outro é quando a divisão entre o primeiro e o segundo resulta em um número inteiro com resto zero.Isso também significa que o primeiro número é o resultado da multiplicação do segundo por algum número inteiro.Exemplo: por exemplo, O 15 é múltiplo de 3 porque esta dentro da tabuada do três (3 x  5 = 15).",
             "Ex: Cecília tem uma maquina de doces que a cada girada ela solta 4 docinhos, se ela girar 1 vez sai 4 docinhos, se ela girar 2 vez sai 8 docinhos, se ela girar 3 vez sai 12 docinhos, se ela  girar 4 vez sai 16 docinhos. Todos esses números são múltiplos de 4."
           ]
         },
         {
           "titulo": "Divisores",
           "conteudo":[
-            "Podemos pensar que os divisores de um numero são todos aqueles que cabem inteiros dentro dele, sem sobrar resto.",
+            "Podemos pensar que os divisores de um número são todos aqueles que cabem inteiros dentro dele, sem sobrar resto.",
             "Ex: Ângela pretende comprar uma pizza de 15 fatias, e queria saber qual o máximo de amigos ela poderia chamar para que todos comam pelo menos um pedaço e não sobre nada. Podemos pensar assim:",
             "Só Ângela = 15 ÷ 1 = 15 só para Ângela; ","Ângela mais duas amigas = 15 ÷ 3 = 5 pedaços para cada;", "Ângela mais 4 amigos = 15 ÷ 5 = 3 pedaços para cada;", "Ângela mais 14 amigos = 15 ÷ 15 = 1 pedaço para cada.",
-            "Conseguiu entender que os divisores de um numero são todos os números que podemos fazer e a divisão e não terá sobra, com o estudo da tabuada vc vai entendendo mais e mais. "
+            "Conseguiu entender que os divisores de um número são todos os números que podemos fazer e a divisão e não terá sobra, com o estudo da tabuada vc vai entendendo mais e mais. "
           ]
         },
         {
           "titulo": "Técnicas para poupar tempo",
           "conteudo":[
-            "Quando o numero que queremos dividir e descobrir um divisor terminar em números pares como 0, 2, 4, 6, 8. Podemos tentar fazer a divisão por 2 de começo.",
+            "Quando o número que queremos dividir e descobrir um divisor terminar em números pares como 0, 2, 4, 6, 8. Podemos tentar fazer a divisão por 2 de começo.",
             "Ex: 684, 684÷2 = 342 (Aqui descobrimos também que 342 é um divisor de 684)",
-            "Quando o numero termina com 0, podemos tentar três possibilidades, o 2, 5 e 10, para tentar fazer a divisão.","Ex: 320 ÷ 2 = 160 ;","320 ÷ 5 = 64 ;","320 ÷ 10 = 32"
+            "Quando o número termina com 0, podemos tentar três possibilidades, o 2, 5 e 10, para tentar fazer a divisão.","Ex: 320 ÷ 2 = 160 ;","320 ÷ 5 = 64 ;","320 ÷ 10 = 32"
           ]
         },
         {
@@ -226,7 +228,7 @@
         {
           "titulo":"1. Pelos múltiplos:",
           "conteudo":[
-            "   • Escrevemos alguns multiplos de cada numero.",
+            "   • Escrevemos alguns multiplos de cada número.",
             "   • O primeiro múltiplo que aparecer em comum é o MMC. ",
             "   • Exemplo:",
             "      -- Múltiplos de 4: 4, 8, 12, 16, 20..",
@@ -237,7 +239,7 @@
         {
           "titulo":"2. Pela decomposição de fatores primos:",
           "conteudo":[
-            "   • Decompomos os numeros em fatores primos",
+            "   • Decompomos os números em fatores primos",
             "   • Pegamos todos os fatores primos que aparecem com os maiores expoentes.",
             "   • Exemplo:",
             "-- 12= 2 x 2 x 3 = 2² x 3",

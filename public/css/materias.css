@@ -1,7 +1,8 @@
  *{
     font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
- }
- .center, .right{
+}
+
+    .center, .right{
     background-color: rgba(217, 217, 217, 1) ;
     justify-content: space-between;
     margin-top: 50px;
@@ -74,6 +75,10 @@ a:hover{
     color: #14939e;
 }
 
+p{
+    font-size: 20px;
+}
+
 ul{
     text-align: left;
     padding-left: 10px;
@@ -94,10 +99,10 @@ li:hover {
 
 
 .subtopico-imagem {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  margin: 20px 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 20px 0;
 }
 
 .subtopico-imagem img {
@@ -106,20 +111,20 @@ li:hover {
 
 /* Adicione esta classe para imagens responsivas quando necessário */
 .subtopico-imagem img.responsiva {
-  max-width: 100%;
-  height: auto;
+    max-width: 100%;
+    height: auto;
 }
 
 .imagem-json {
-  max-width: none !important;
-  width: auto !important;
-  height: auto !important;
+    max-width: none !important;
+    width: auto !important;
+    height: auto !important;
 }
 
 .subtopico-imagem {
-  display: flex;
-  justify-content: center;
-  align-items: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
   overflow: hidden; /* Previne vazamento */
 }
 
